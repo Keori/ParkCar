@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>交易记录</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+
+<!-- 日历插件 -->
+<script src="../laydate/laydate.js"></script>
+<link  href="../laydate/laydate.css" rel="stylesheet">
+<script src="../layer/layer.js"></script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">数据报表</div>
+                        
+        <ul>
+        	<li class="on"><a href="">交易统计</a></li>
+        	<li><a href="">交易记录</a></li>
+        	<li><a href="">交易数据分析</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">已结算管理</div>
+        <article class="boxRightCon">
+            <div class="promptText promptTextB0">统计数据仅包括系统支持的对账支付通道，不包括第三方或商家自行定义的通道。<br/>结算金额=收入总金额-退款金额（绝对值）-商户手续费-清算手续费，清算手续费是否收取由通道结算方决定。</div>
+			<div class="CommonInput sel_box sel_box3">
+                <ul>
+                    <li class="ceat">
+                        <span class="name sel_th">结算日期：</span><input name="text" type="text" style="width:80px" onclick="laydate()"/><span class="mlr5">—</span><input name="text" type="text" style="width:80px" onclick="laydate()"/><span class="garytip">结算日期查询跨度不能超过近60天</span>
+                    </li>
+                    <li class="ceatBtn">
+                        <span class="org_btn"><input class="long" type="button" value="查询" onclick="dateTip()"></span>
+                        <span class="green_btn"><input class="long" type="button" value="下载结算单"></span>
+                    </li>
+                </ul>
+			</div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable5 jilu tr_color">
+                <tbody>
+                <tr>
+                    <th>账单号</th>
+                    <th>结算日期</th>
+                    <th>交易起始日期</th>
+                    <th>收入金额（元）</th>
+                    <th>收入笔数</th>
+                    <th>退款金额（元） </th>
+                    <th>退款笔数</th>
+                    <th>商户手续费（元）</th>
+                    <th>结算金额</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>8764313154545</td>
+                    <td>20150525</td>
+                    <td>20150215-20160602</td>
+                    <td>100.00</td>
+                    <td>2</td>
+                    <td>50.00</td>
+                    <td>3</td>
+                    <td>2.00</td>
+                    <td>963.00</td>
+                    <td class="org"><a href="">下载交易明细</a></td>
+                </tr>
+                <tr>
+                    <td>8764313154545</td>
+                    <td>20150525</td>
+                    <td>20150215-20160602</td>
+                    <td>100.00</td>
+                    <td>2</td>
+                    <td>50.00</td>
+                    <td>3</td>
+                    <td>2.00</td>
+                    <td>963.00</td>
+                    <td class="org"><a href="">下载交易明细</a></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="bg_f3 page">共 99 项 
+                <div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+            <div class="clear"></div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+
+<script type="text/javascript" src="../js/calendar3.js"></script>
+<script>
+$(function(){
+	$(".card1,.card2,.card3,.card4,.card5,.card6").click(function(event){
+		var e=window.event || event;
+		  if(e.stopPropagation){
+		   e.stopPropagation();
+		  }else{
+		   e.cancelBubble = true;
+		  }
+		
+		if($(this).next(".show_card").css("display")=="none"){ 
+			$(".show_card").hide(); 
+			$(this).next(".show_card").show();
+		}else{
+			$(this).next(".show_card").hide();
+		};
+
+	});
+	$(".show_card").click(function(event){
+	  var e=window.event || event;
+	  if(e.stopPropagation){
+	   e.stopPropagation();
+	  }else{
+	   e.cancelBubble = true;
+	  }
+	 });
+	 document.onclick = function(){
+	  $(".show_card").hide();
+	 };
+
+});	
+     function dateTip(){
+        layer.msg('结算日期查询跨度不能超过近90天');
+     }
+</script>
+</body>
+</html>

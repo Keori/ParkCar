@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>02新增制卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/prepaidcard.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+<!-- header start -->
+<header class="header">
+    <div class="top w1000">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1000">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+        <ul>
+        	<li class="on"><a href="">制卡管理</a></li>
+            <li><a href="">我的制卡车（4）</a></li>
+            <li><a href="">会员优惠管理</a></li>
+            <li><a href="">活动管理</a></li>
+            <li><a href="">会员列表</a></li>
+            <li><a href="">数据记录</a></li>
+            <li><a href="">基础信息管理</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">新增制卡</div>
+        <article class="boxRightCon">
+			<div class="f16">三步操作完成制卡设置</div>
+			<div class="menutypes skin-minimal">
+            	<div class="add_step">
+                	<h3><span class="org">1</span> 选择模板</h3>
+                    <p>请选择您的卡片类型，并设置充值、密码类型</p>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <th scope="row" width="100"><i class="red">*</i>卡片类型</th>
+                        <td class="skin-minimal">
+                        	<span>
+                            <input type="radio" id="1" name="1" checked />
+                            <label for="1">磁条卡</label>
+                            </span>
+                            <span>
+                            <input type="radio" id="2" name="1" />
+                            <label for="2">M1卡</label>
+                            </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>充值类型</th>
+                        <td class="skin-minimal">
+                        	<span>
+                            <input type="radio" id="3" name="2" checked />
+                            <label for="3">可充值</label>
+                            </span>
+                            <span>
+                            <input type="radio" id="4" name="2" />
+                            <label for="4">不可充值</label>
+                            </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>会员优惠</th>
+                        <td>
+                        	<div class="select fl select3">
+                            <select id="a" style="display: none" name="a">
+                                <option value="1">非会员 1级 优惠：无</option>
+                            </select>
+                            </div>
+                            <button class="go">VIP设置</button>
+                            <div class="help">
+                            	<a href="javascript:;"></a>
+                                <div class="help_show">
+                                	<b></b>
+                                    <p>提示：</p>
+                                    <p class="color9">选择非会员，后期售卡时不需要等级顾客姓名及手机号；</p>
+                                    <p class="color9">选择会员，后期售卡时必须登记顾客姓名及手机号。</p>
+                                </div>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>有效期</th>
+                        <td>
+                        	<div class="select select2">
+                            <select id="a" style="display: none" name="a">
+                                <option value="1">1年</option>
+                            </select>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>密码类型</th>
+                        <td class="skin-minimal">
+                        	<span>
+                            <input type="radio" id="5" name="3" checked />
+                            <label for="5">无密码</label>
+                            </span>
+                            <span>
+                            <input type="radio" id="6" name="3" class="s1" />
+                            <label for="6">固定密码<span class="color9 left10" style="display:none">初始密码为6个1（可修改）</span></label>
+                            </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>初始面额</th>
+                        <td>
+                        	<div class="select select2">
+                            <select id="a" style="display: none" name="a">
+                                <option value="1">0元</option>
+                            </select>
+                            </div>
+                        </td>
+                      </tr>
+                      
+                    </table>
+
+                    <h3><span class="org">2</span> 上传卡面设计源文件</h3>
+                    <p class="top10"><span class="red">*</span>卡面文件（建议包含预付卡正、反面两面设计源文件，卡面包括：卡名称、logo，使用说明等信息）</p>
+                    <p class="ceat top10"><input name="" type="button" value="上传文件"><span class="color9">（建议将正、反两面面源设计压缩后上传，不可大于5M，源文件格式包括PSD，CDR、AI）</span></p>
+                    <p class="top10">TTG预付卡设计文件.rar</p>
+                    <h3><span class="org">3</span> 设置发卡数量</h3>
+                    <div class="faka"><span class="red">*</span>发卡数量<input class="txt2" value="10" />张<i>单价：1.00元</i><i>总计：500元</i></div>
+                </div>
+				<div class="vip_btn center">
+					<div class="btn fabu_btn">
+                    	<input name="" type="button" value="加入制卡车">
+					</div>
+					<div class="btn gray_btn">
+						<a href="">返回</a>
+					</div>
+				</div>
+				
+			</div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/icheck.js"></script>
+<script type="text/javascript">
+   $(document).ready(function(){
+	  $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+	  
+	$(".select select").selectbox();
+	$(".help a").hover(function(){
+			$(this).next(".help_show").show();
+		},function(){
+			$(this).next(".help_show").hide();
+		});
+		
+//密码类型
+	  $(".s1").on('ifUnchecked', function(event) {
+		  	$(this).parent().next("label").find("span").hide();
+	  });
+	  $(".s1").on('ifChecked', function(event) {
+		  	$(this).parent().next("label").find("span").show();
+	  });
+})
+</script>
+</html>

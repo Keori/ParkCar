@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">优惠券</div>
+        <ul>
+        	<li><a href="">创建优惠券</a></li>
+            <li><a href="">优惠券列表</a></li>
+            <li class="on"><a href="">领券记录</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">领券记录</div>
+        <article class="boxRightCon">
+        	<div class="CommonInput RightCon_first">
+            	<ul>
+                	<li><span class="name">领取时间</span><input type="text" name="text"/> — <input type="text" name="text"/></li>
+                	<li><span class="name">券名称</span><input type="text" name="text"/></li>
+                	<li class="optiondiv"><span class="name">状态</span>
+						<div class="select">
+						<select id="a" style="display: none" name="a">
+							<option value="1">已使用</option>
+							<option value="2">未使用</option>
+							<option value="3">已过期</option>
+						</select>
+						</div>
+					</li>
+                    <li class="org_btn"><input name="submit" type="submit" value="搜索"/></li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable2">
+            	<tr>
+                	<th>券名称</th>
+                    <th>手机号<br/>银行卡号</th>
+                    <th>领取时间</th>
+                    <th>使用时间</th>
+                    <th>消费金额<br/>实际消费金额 </th>
+                    <th>获得积分</th>
+                    <th>状态</th>
+                </tr>
+                <tr>
+                    <td>竹子林全单9折</td>
+                    <td>13530025220</td>
+                    <td>2014/02/20 </td>
+                    <td>2014/02/20</td>
+                    <td>120/100</td>
+                    <td>30</td>
+                    <td>已使用</td>
+                </tr>
+                <tr>
+                    <td>竹子林全单9折</td>
+                    <td>13530025220<br/>626226*******1313</td>
+                    <td>2014/02/20 </td>
+                    <td>2014/02/20</td>
+                    <td>120/100</td>
+                    <td>30</td>
+                    <td class="org">未使用</td>
+                </tr>
+                <tr>
+                    <td>竹子林全单9折</td>
+                    <td>13530025220</td>
+                    <td>2014/02/20 </td>
+                    <td>2014/02/20</td>
+                    <td>120/100</td>
+                    <td>30</td>
+                    <td>已过期</td>
+                </tr>
+                <tr>
+                    <td>竹子林全单9折</td>
+                    <td>13530025220</td>
+                    <td>2014/02/20 </td>
+                    <td>2014/02/20</td>
+                    <td>120/100</td>
+                    <td>30</td>
+                    <td>已过期</td>
+                </tr>
+            </table>
+            <div class="bg_f3 page">共 99 项 
+            	<div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="" class="on">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+			<div class="tip top20">
+				<div class="f2">提示：</div>
+				<div class="tip_con">1.点击“同步用户下载优惠券记录”按钮，会把用户下载的U联生活优惠券记录同步到该页面<br/>
+2.同步同步用户下载优惠券记录操作，每天只能进行10次。<br/>
+3.同步的数据只作显示，不能操作，如有需要请联系U联生活相关人员</div>
+			</div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+</html>

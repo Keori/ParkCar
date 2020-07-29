@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>新建二维码广告1</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/ordering.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<script type="text/javascript" src="../js/icheck.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+	 
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+<!-- header start -->
+<header class="header">
+    <div class="top w1000">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1000">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+        <div class="left_con_tit borderb">二维码广告</div>
+        <ul>
+        	<li class="on"><a href="">新建二维码广告</a></li>
+        	<li><a href="">二维码广告列表</a></li>
+            <li><a href="">用户扫码记录</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">新建二维码广告</div>
+        <article class="boxRightCon">
+			<div class="add_menutype">
+            	
+				<ul>
+                	<li><div class="name color9">提示：</div>
+						<p class="color9">二维码广告创建后将相关二维码展示在商家签购小票中，帮助商家进行二维码营销。</p>
+					</li>
+					<li><div class="name">广告名称：</div>
+						<input name="" type="text" class="w1"/><span class="color9">10个字符以内</span>
+					</li>
+                    <li><div class="name">二维码类型：</div>
+						<div class="skin-minimal">
+						<input name="1" class="tab1" id="1" type="radio" checked value=""/><label for="1">商家公众号</label>
+						<input name="1" class="tab2" id="2" type="radio" value=""/><label for="2">优惠券</label>
+                        <input name="1" class="tab3" id="3" type="radio" value=""/><label for="3">会员卡</label>
+						</div>
+					</li>
+					<li class="tab_con1"><div class="name">APP ID：</div>
+						<input name="" type="text" class="w1" value="" />
+                        <span class=" help_a"></span>
+                        <div class="help_show">
+                        	<b></b>
+                        	<p>AppID和AppSecret是第三方开发向微信读取数据的身份标识；</p>
+                        	<p>登录微信公众平台https://mp.weixin.qq.com，进入【开发者中心】可获取开发ID</p>
+                        </div>
+					</li>
+                    <li class="tab_con1"><div class="name">APP SECRET：</div>
+						<input name="" type="text" class="w1" value="" />
+					</li>
+                    <li class="tab_con2"><div class="name">添加优惠券：</div>
+						<a href="javascript:;" class="org add_a">+添加优惠券</a>
+                        <span class="color9">如选择多张优惠券则随机出现</span>
+                        <div class="add_con">
+                        	<span>15元代金券<a href="javascript:;">删除</a></span>
+                            <span>15元代金券<a href="javascript:;">删除</a></span>
+                            <span>全场8.5折扣券<a href="javascript:;">删除</a></span>
+                            <span>15元代金券<a href="javascript:;">删除</a></span>
+                        </div>
+					</li>
+                     <li class="tab_con3"><div class="name">添加会员卡：</div>
+						<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">会员卡名称</option>
+								<option value="2">会员卡名称</option>
+							</select>
+						</div>
+                        <span><a href="" class="org">+去创建会员卡</a></span>
+					</li>
+                    <li><div class="name">有效期：</div>
+						<input name="" type="text" value=""  style="width:78px" placeholder="生效时间"/> — <input name="" type="text" value="" placeholder="失效时间" class="left10" style="width:78px"/>
+					</li>
+                    <li><div class="name">广告词：</div>
+						<input name="" type="text" class="w1" placeholder="扫码关注商家公众号，了解更多优惠。"/><span class="color9">广告词将显示在签购小票中，字数不超过30字</span>
+					</li>
+                    <li><div class="name">适用门店：</div>
+                      	<div class="skin-minimal">
+						<input name="2" id="4" type="checkbox" checked value=""/><label for="4">门店一</label>
+						<input name="3" id="5" type="checkbox" value=""/><label for="5">门店二</label>
+                        <input name="4" id="6" type="checkbox" value=""/><label for="6">门店三</label>
+						</div>
+					</li>
+                    <li><div class="name">是否生效：</div>
+						<div class="skin-minimal">
+						<input name="3" id="7" type="radio" checked value=""/><label for="7">是</label>
+						<input name="3" id="8" type="radio" value=""/><label for="8">否</label>
+						</div>
+					</li>
+					<li>
+						<div class="vip_btn">
+							<div class="btn fabu_btn"><input name="button" type="button" value="确定"/></div>
+							<div class="btn save_btn"><input name="button" type="button" value="取消"/></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+<script type="text/javascript">
+$(function(){
+//APP ID提示
+	$(".help_a").hover(function(){
+			$(".help_show").show();
+		},function(){
+			$(".help_show").hide();
+		});
+
+//切换
+	$(".tab1").on('ifChecked', function(event) {
+		  	$(".tab_con1").show();
+			$(".tab_con2,.tab_con3").hide();
+	});
+	$(".tab2").on('ifChecked', function(event) {
+			$(".tab_con2").show();
+			$(".tab_con1,.tab_con3").hide();
+	});
+	$(".tab3").on('ifChecked', function(event) {
+			$(".tab_con3").show();
+			$(".tab_con1,.tab_con2").hide();
+	});	 	
+});
+</script>
+</html>

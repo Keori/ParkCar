@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生成二维码</title>
+<script src="jquery.min.js"></script>
+<script src="qrcode.min.js"></script>
+<style>
+body{
+text-align: center;
+}
+#qrcode{
+margin:100px auto;
+}
+#text{
+width: 200px;height: 100px;
+border:1px solid #ccc;
+}
+#codeImg {
+width: 300px;
+height: 300px;
+margin:0 auto;
+}
+</style>
+</head>
+<body>
+<input type="text" id="text" placeholder="请输入要生成二维码的文本">
+<input type="button" id="create" value="生成二维码">
+<br>
+<div id="code"></div>
+</div>
+<script type="text/javascript">
+$("#code").qrcode({
+    render: "table", //table方式
+    width: 200, //宽度
+    height:200, //高度
+    text: "www.helloweba.com" //任意内容
+});
+
+</script>
+</body>
+</html>

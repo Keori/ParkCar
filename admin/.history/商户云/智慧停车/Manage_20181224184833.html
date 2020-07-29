@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li><a href="ParkComputed.html">停车统计</a></li>
+            <li><a href="ParkManage.html">车牌管理</a></li>
+            <li>
+                <h1><a class='pagetitle' href="javascript:;" @click='ManageType'>营销管理</a><i></i></a>
+                <div class='secondary' v-show='type'>
+                    <h2 :class="{active:changeGray===1}" @click='change(1)'>
+                        <a class='nextselect' href="Manage.html">
+                            <span class='blockText'>模板类型</span>
+                        </a>
+                    </h2>
+                    <h2 :class="{active:changeGray===2}" @click='change(2)'>
+                        <a class='nextselect' href="Manage2.html">
+                            <span class='blockText'>广告类型</span>
+                        </a>
+                    </h2>
+                </div>
+            </li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">营销管理>模板类型</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist viplist_formlist_1">
+                <ul>
+                    <li>
+                        <div class="org_btn"><a href='ManageChild.html'>添加模板</a></div>
+                    </li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+                <tr>
+                    <th>模板编号</th>
+                    <th>模板名称</th>
+                    <th>模板类型</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                    <th>创建人</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for='(item,index) in Manage' v-show='index<6'>
+                    <td>{{index+1}}1</td>
+                    <td>{{item.templateName}}</td>
+                    <td>{{item.tempCategoryDesc}}</td>
+                    <td>{{item.templateStatus}}</td>
+                    <td>{{item.createTime}}</td>
+                    <td>{{item.createBy}}</td>
+                    <td>{{item.note}}</td>
+                    <td class="red"><a @click='modulerevise(item.id)'>查看并编辑</a><a @click='remove'>删除</a></td>
+                </tr>
+            </table>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<script type="text/javascript">
+new Vue({
+    el: '#content',
+    data(){
+        return{
+            changeGray: '',
+            type: false,
+            Manage:[]
+        }
+    },
+    methods:{
+        modulerevise(id){
+            window.location.href = "ManageChild.html"+'?='+id
+        },
+        remove(id){
+            window.location.href = "ManageChild.html"+'?='+id
+        },
+        ManageType(){
+            if(this.type === false){
+                this.type = true
+            }else{
+                this.type = false
+            }
+        },
+        change(num){
+            this.changeGray = num
+        }
+    },
+    created(){
+        let params = JSON.stringify({})
+        $.ajax({
+            url: 'http://q214e81040.iask.in:32642/merchant/Advertisement/list',
+            type: 'get',
+            data: params,
+            statusCode: {
+                404:function(){
+                    alert('网络错误') //报错提示
+                }
+            },
+            success:(params) => {   //(data,textStatus)
+                this.Manage = params.data;
+                console.log(this.Manage);
+            }
+        })
+    }
+});
+</script>
+</body>
+<style lang='less'>
+.nextselect{
+    font-size: 14px;
+}
+.active{
+    background: #EEEEEE
+}
+.blockText{
+    display: block;
+    width: 130px;
+    height: 37.6px;
+    margin: auto;
+}
+</style>
+</html>

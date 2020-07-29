@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>手工调账</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">会员卡</div>
+                        
+        <ul>
+        	<li class="on"><a href="">会员卡管理</a></li>
+        	<li><a href="">推广渠道管理</a></li>
+            <li><a href="">客户查询</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">手工调账</div>
+        <article class="boxRightCon">
+            <div class="f2 edit_box">账户信息</div>
+            <div class="user_information user_information2 borderb">
+                <div class="userdetails_text">
+                    <li><span class="name">会员卡号：</span>12345678901</li>
+                    <li><span class="name">会员手机号：</span>123456146846</li>
+                    <li><span class="name">姓名：</span>小明</li>
+                </div>
+                <div class="userdetails_text">
+                    <li><span class="name">会员卡名称：</span>淘淘谷</li>
+                    <li><span class="name">卡类型：</span>淘淘谷</li>
+                    <li><span class="name">领卡时间：</span>2000-07-11</li>
+                </div>
+                <div class="userdetails_text">
+                    <li><span class="name">累计消费金额：</span>856.2</li>
+                    <li><span class="name">余额：</span>856.2</li>
+                    <li></li>
+                </div>
+                <div class="userdetails_text">
+                    <li><span class="org_btn"><a href="javascript:void(0);">充值</a></span></li>
+                    <li><span class="org_btn"><a href="javascript:void(0);">扣款</a></span></li>
+                </div>
+            </div>
+            <div class="f2">调账记录</div>
+            <div class="CommonInput RightCon_first mt20">
+                <ul>
+                    <li><span class="name">交易时间：</span><input type="text" name="text"/> — <input type="text" name="text"/></li>
+                    <li><span class="name">交易类型：</span>
+                        <div class="select select0">
+                        <select id="a" style="display: none" name="a">
+                            <option value="1">全部</option>
+                            <option value="2">出售中</option>
+                            <option value="3">未上架</option>
+                            <option value="4">已售罄</option>
+                        </select>
+                        </div>
+                    </li>
+                    <li><span class="org_btn"><input name="submit" type="submit" value="搜索"/></span></li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable">
+                <tr>
+                    <th>交易时间</th>
+                    <th>订单号</th>
+                    <th>交易类型</th>
+                    <th>交易金额</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="bg_f3 page page2">共 99 项 
+                <div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+</html>

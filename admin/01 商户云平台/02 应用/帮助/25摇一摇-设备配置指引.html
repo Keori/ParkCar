@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>25摇一摇-设备配置指引</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+<!-- header start -->
+<header class="header">
+    <div class="top w1000">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1000">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">摇一摇</div>
+                        
+        <ul>
+            <li><a href="">如何购买及配置设备</a></li>
+            <li><a href="">如何预估需要的设备数量</a></li>
+            <li class="on"><a href="">设备配置指引</a></li>
+            <li><a href="">如何激活设备</a></li>
+            <li><a href="">为什么摇不出页面</a></li>
+            <li><a href="">如何修改摇出的页面</a></li>
+            <li><a href="">如何部署设备</a></li>
+            <li><a href="">如何提升设备页面的摇出优先级</a></li>
+            
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">如何预估需要的设备数量</div>
+        <article class="boxRightCon help_wrap">
+			<div class="text">
+            	<p>本指引将为你讲解如何将你的设备接入“微信摇一摇周边”。如果你希望更快捷地接入，建议请设备供应商完成设备配置。</p>
+                <h3>【配置简述】</h3>
+                <div class="text">
+                    <p>第一步：请确定你的设备可以重新配置UUID、Major、Minor</p>
+                    <p>● 市场上大部分的设备都支持重新配置UUID、Major、Minor，但并非所有设备均可自由进行配置，具体请询问你的设备供应商。</p>
+                    <p>第二步：安装手机配置程序</p>
+                    <p>● 若设备厂商提供了配置程序，请下载指定的程序并按流程操作</p>
+                    <p>● 若设备厂商未提供配置程序，你需要使用iPhone4S以上、IOS7.0以上版本的手机，前往appstore下载AXABeacon的配置工具，常见的有LightBlue、EABeacon、iBeacon、RealKit等</p>
+                    <p>第三步：将设备信息配置到你现有的设备中</p>
+                    <p>● 在“摇一摇周边商户管理后台”进行“新增设备”后，你会获得系统生成的《设备信息列表》，列表中的UUID、Major、Minor即是你需要配置的设备信息</p>
+                    <p>● 详细配置流程请参考下面的“流程演示“</p>
+                    <p>● 某些配置程序（比如LightBlue）可能需要将Major、Minor转换成十六进制数字，请特别留意</p>
+                    <p>第四步：重启设备，验证配置是否生效</p>
+                    <p>● 详细流程请参考下面的“流程演示“</p>
+                </div>
+                <h3>【流程演示】</h3>
+                <div class="text">
+                	<p>下面以AXABeacon配置程序为例，简单演示设备的配置流程：</p>
+                    <p>1. 打开需要配置的设备开关（建议关闭或远离附近的其他设备，以避免其他设备的信号干扰）</p>
+                    <p>2. 打开手机蓝牙，靠近需要配置的设备，打开AXABeaconn程序，按信号强度找到可配置的设备，并点击进入下一级页面</p>
+                    <p><img src="../images/help/yao_img4.png" alt="" /></p>
+                    <p>3. 自动带入设备的“UUID”，确认设备信息无误，点击“MODIFY”按钮进行配置</p>
+                    <p><img src="../images/help/yao_img5.png" alt="" /></p>
+                    <p>至此，设备配置完成，你可以用以下方式验证配置是否成功：</p>
+                    <p>1. 重新启动设备（关闭设备开关后，再重新打开即可）</p>
+                    <p>2. 使用任意手机，打开蓝牙并靠近设备，进入微信摇一摇，等待“周边”出现，摇出激活页面即可</p>
+                </div>
+                
+                
+                
+			</div>
+
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+</html>

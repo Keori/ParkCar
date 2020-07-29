@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生成二维码</title>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/qrcode.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<div id="qrcode"></div>
+<script>
+    jQuery('#qrcode').qrcode({width: 64,height: 64,text: "www.csdn.net"});
+</script>
+</body>
+</html>

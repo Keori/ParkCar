@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>012优惠管理</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/waimai.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+        <ul>
+        	<li><a href="">基本信息管理</a></li>
+            <li><a href="">配送员管理</a></li>
+            <li><a href="">店铺公告</a></li>
+            <li><a href="">分类管理</a></li>
+            <li><a href="">菜品管理</a></li>
+            <li class="on"><a href="">优惠管理</a></li>
+            <li><a href="">用户评价</a></li>
+            <li>
+            	<a href="">外卖统计</a>
+                <ul>
+                	<li><a href="">订单统计</a></li>
+                    <li><a href="">菜品统计</a></li>
+                    <li><a href="">客户统计</a></li>
+                    <li><a href="">退单统计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">优惠管理</div>
+        <article class="boxRightCon">
+        	<div class="off_list">
+            	<ul>
+            		<li class="n1">
+                    	<div class="hd"><span class="org">套餐赠送</span><span class="color9 size_12">(如下单赠送饮料1份)</span></div>
+                        <div class="top10">下单即赠送<input class="txt" type="text" /></div>
+                        <a href="javascript:;">开关</a>
+                    </li>
+                    <li class="n1">
+                    	<div class="hd"><span class="org">满赠活动</span><span class="color9 size_12">(如满100元赠送饮料1份)</span></div>
+                        <div class="top10">单笔订单满<input class="txt" type="text" style="color: rgb(153, 153, 153); width:50px;" value="整数" onblur="if(this.value == '') { this.value='整数';this.style.color='#999'}" onfocus="if(this.value == '整数') {this.value='';this.style.color='#333'}" />元，赠送<input class="txt" type="text" /></div>
+                        <a href="javascript:;">开关</a>
+                    </li>
+                    <li class="n2"><!-- n2免配送 -->
+                    	<div class="hd"><span class="org">满免配送费</span><span class="color9 size_12">(如每笔订单满50元，免配送费)</span></div>
+                        <div class="top10">单笔订单满<input class="txt" type="text" style="color: rgb(153, 153, 153); width:50px;" value="整数" onblur="if(this.value == '') { this.value='整数';this.style.color='#999'}" onfocus="if(this.value == '整数') {this.value='';this.style.color='#333'}" />元，免费配送</div>
+                        <a href="javascript:;" class="off">开关</a><!-- off 关闭 -->
+                    </li>
+            	</ul>
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+<script type="text/javascript">
+$(function(){
+	//开关
+	$(".off_list a").click(function(){
+		if($(this).hasClass("off")){
+			$(this).removeClass("off");
+		}else{
+			$(this).addClass("off");	
+		}	
+	});
+	
+});
+</script>
+
+</html>

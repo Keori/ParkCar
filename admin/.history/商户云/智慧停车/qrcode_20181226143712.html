@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type='text/javascript' src='../js/qrcode.min.js'></script>
+    <script type='text/javascript' src='../js/qrcode.js'></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+   <section id='section'>
+        <div class="qart">
+                <div id="qrcode" ref="qrcode">
+                </div>
+                <input type="text" id="getval" value="" placeholder="修改这个值改变二维码">
+            </div>
+   </section>
+<script type="text/javascript">
+new Vue({
+    el: '#section',
+    data(){
+    },
+    methods: {
+
+_getQart: function() {
+
+    if(this.i==false){
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            width : 200,//设置宽高
+            height : 200
+        });
+        document.getElementById("getval").onkeyup =function(){
+            qrcode.makeCode(document.getElementById("getval").value);
+        };
+
+        qrcode.makeCode(document.getElementById("getval").value);
+
+    }
+    this.i = true;
+},
+
+},
+  mounted () {  //调用
+    this._getQart()
+  }
+})
+</script>
+</body>
+<style>
+        #qrcode{
+        height: 200px;
+        width: 200px;
+        margin: auto;
+    }
+</style>
+</html>

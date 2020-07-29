@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script>
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+<!-- header start -->
+<header class="header index_header">
+    <div class="top w1170">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content content1170">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">商户CRM</div>
+
+        <ul>
+        	<li class="on"><a href="">会员列表</a></li>
+        	<li><a href="">会员忠诚度分析</a></li>
+        	<li><a href="">新增会员</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">会员列表</div>
+        <article class="boxRightCon">
+        	<div class="date_all">
+				<article class="first">
+					<dl class="font20">
+						<dt>今日新增会员数：</dt><dd>10</dd>
+					</dl>
+					<dl class="font20">
+						<dt>今日活跃会员数：</dt><dd>100</dd>
+					</dl>
+					<dl>
+						<dt>会员总数：</dt><dd>500</dd>
+					</dl>
+				</article>
+				<article class="second">
+					<dl class="font20">
+						<dt>今日交易笔数：</dt><dd>200笔</dd>
+					</dl>
+					<dl>
+						<dt>总交易笔数：</dt><dd>1000笔</dd>
+					</dl>
+				</article>
+			</div>
+    		<div class="pb10 f2 borderb">会员列表</div>
+			<div class="CommonInput viplist_formlist viplist_formlist_1">
+				<ul>
+					<li>
+						<span class="name">会员</span><input name="text" type="text" style="width:100px;"/>
+					</li>
+					<li>
+						<span class="name">累计消费金额</span><input name="text" type="text"/><span class="mlr5">—</span><input name="text" type="text"/>
+					</li>
+					<li>
+						<span class="name">最近消费时间</span><input name="text" type="text"/><span class="mlr5">—</span><input name="text" type="text"/>
+					</li>
+					<li>
+						<span class="name">累计消费次数</span><input name="text" type="text" style="width:100px;"/>
+					</li>
+					<li>
+						<span class="name">开卡时间</span><input name="text" type="text"/><span class="mlr5">—</span><input name="text" type="text"/>
+					</li>
+					<li>
+						<span class="name">卡类型</span><div class="select"><select><option>1</option><option>1</option></select></div>
+					</li>
+					<li>
+						<span class="name">卡状态</span><div class="select"><select><option>1</option><option>1</option></select></div>
+					</li>
+					<li>
+						<div class="org_btn"><a href="">搜索</a></div>
+					</li>
+				</ul>
+			</div>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+            	<tr>
+                	<th>会员</th>
+                    <th>会员编号</th>
+                    <th>开卡时间</th>
+                    <th>卡类型</th>
+                    <th>累计消费金额</th>
+                    <th>累计消费次数</th>
+                    <th>初次消费时间</th>
+                    <th>最近消费时间</th>
+                    <th>卡状态</th>
+                </tr>
+                <tr>
+                    <td>15800000000</td>
+                    <td>00000001</td>
+                    <td>2014-09-02</td>
+                    <td>储值型</td>
+                    <td>1000元</td>
+                    <td>3次</td>
+                    <td>2014-09-02 21:21:21</td>
+                    <td>2014-09-02 21:21:21</td>
+					<td class="red">暂停</td>
+                </tr>
+                <tr>
+                    <td>15800000000</td>
+                    <td></td>
+                    <td>2014-09-02</td>
+                    <td>积分型</td>
+                    <td>1000元</td>
+                    <td>3次</td>
+                    <td></td>
+                    <td></td>
+					<td>正常</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>折扣型（普通）</td>
+                    <td>1000元</td>
+                    <td>3次</td>
+                    <td></td>
+                    <td></td>
+					<td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>折扣型（黄金）</td>
+                    <td>1000元</td>
+                    <td>3次</td>
+                    <td></td>
+                    <td></td>
+					<td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>折扣型（钻石）</td>
+                    <td>1000元</td>
+                    <td>3次</td>
+                    <td></td>
+                    <td></td>
+					<td></td>
+                </tr>
+            </table>
+			<div class="bg_f3 page">共 99 项
+            	<div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+</html>

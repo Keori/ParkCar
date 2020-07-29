@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>011添加菜品</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/waimai.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+        <ul>
+        	<li><a href="">基本信息管理</a></li>
+            <li><a href="">配送员管理</a></li>
+            <li><a href="">店铺公告</a></li>
+            <li><a href="">分类管理</a></li>
+            <li class="on"><a href="">菜品管理</a></li>
+            <li><a href="">优惠管理</a></li>
+            <li><a href="">用户评价</a></li>
+            <li>
+            	<a href="">外卖统计</a>
+                <ul>
+                	<li><a href="">订单统计</a></li>
+                    <li><a href="">菜品统计</a></li>
+                    <li><a href="">客户统计</a></li>
+                    <li><a href="">退单统计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">添加菜品</div>
+        <article class="boxRightCon">
+			<div class="edit_info">
+                <div class="addre_box">
+                	<table width="780" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <th scope="row"><i class="red">*</i>菜品编号：</th>
+                        <td><input type="text"  class="txt w_not" /></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>菜名：</th>
+                        <td><input type="text"  placeholder="如：干锅花菜" class="txt w_not" /></td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>菜品分类：</th>
+                        <td class="ceat">
+                        	<div class="select select3">
+                                <select>
+                                    <option value="1">全部</option>
+                                    <option value="2">11</option>
+                                    <option value="3">222</option>
+                                </select>
+                            </div>
+                            <span class="color9">折扣商品暂只支持美团</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">可选规格：</th>
+                        <td>
+                        	<span class="skin-minimal">
+                                <input class="s1" type="radio" id="1" name="1" checked/>
+                                <label for="1">无</label>
+                            </span>
+                            <span class="skin-minimal">
+                                <input class="s2" type="radio" id="2" name="1"/>
+                                <label for="2">有</label>
+                            </span>
+                            <span class="guige">
+                            	<a href=""></a>
+                                <div class="show_guige_img"><b></b><img src="../images/waimai/guige.png" alt="" /></div>
+                            </span>
+                            <div class="guige_list show_guige">
+                            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <thead>
+                                  <tr>
+                                    <td class="r">规格分类<i>1</i>（单选）</td>
+                                    <td colspan="3"><input type="text" placeholder="如：规格"  class="txt1"/></td>
+                                    <td class="l"><a href="javascript:;" class="red add_nm">添加分类</a></td>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td class="r" width="140">属性<em>1</em></td>
+                                    <td><input type="text" placeholder="如：大份" class="txt2"/></td>
+                                    <td class="r add_del" width="100" >
+                                    	<span class="ceat">
+                                            <input type="checkbox" checked/> 价格
+                                        </span>
+                                    </td>
+                                    <td class="add_del"><input type="text"  class="txt2"/></td>
+                                    <td class="l"><a href="javascript:;" class="add_btn">增加</a></td>
+                                  </tr>
+                                </tbody>
+                                </table>
+
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>销售价：</th>
+                        <td><input type="text"  class="txt w_not"/> 元/份</td>
+                      </tr>
+                      <tr class="show_guige">
+                        <th scope="row"><i class="red">*</i>商品折扣：</th>
+                        <td><input type="text" class="txt" style="width:50px;" /> 折，每单限购 <input type="text" class="txt" style="width:50px;" /> 份</td>
+                      </tr>
+                      <tr class="show_guige">
+                        <th scope="row">是否限时：</th>
+                        <td class="ceat">
+                        	<span class="skin-minimal fl">
+                                <input type="radio" id="3" name="2" checked/>
+                                <label for="3">否</label>
+                            </span>
+                            <span class="skin-minimal fl">
+                                <input class="s3" type="radio" id="4" name="2"/>
+                                <label for="4">是</label>
+                            </span>
+                            <div class="show_date">
+                            	<div class="select select2">
+                                    <select>
+                                        <option value="1">9:00</option>
+                                    </select>
+                                </div> — &nbsp;&nbsp;
+                                <div class="select select2">
+                                    <select>
+                                        <option value="1">12:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">排序号：</th>
+                        <td><input type="text"  class="txt w_not"/> <span class="color9">输入数字可设置菜品排序，数字越小，排名越靠前</span></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">菜品图片：</th>
+                        <td>
+                        	<div class="upload_list">
+                                <ul>
+                                    <li>
+                                        <div class="img">
+                                            <!-- 上传前 -->
+                                            <p class="ts">图片建议尺寸600*450不可大于2M</p>
+                                            <!-- 上传后 -->
+                                            <img style="display:none" src="../images/waimai/upload_img1.jpg" width="136" height="102" alt="" />
+                                        </div>
+                                        <div class="btn"><input name="" type="button" value="上传图片"></div>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>每日供应量：</th>
+                        <td class="ceat">
+                        	<span class="skin-minimal fl">
+                                <input type="radio" id="5" name="3" checked/>
+                                <label for="5">不限量供应</label>
+                            </span>
+                            <span class="skin-minimal fl">
+                                <input class="s4" type="radio" id="6" name="3"/>
+                                <label for="6">限量供应</label>
+                            </span>
+                            <div class="show_date">
+                            	<input type="text" placeholder="输入每日供应份数（份）"  class="txt w_not"/>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>最小购买量：</th>
+                        <td><input type="text" value="1"  class="txt w_not"/> 份</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>打包盒数量：</th>
+                        <td><input type="text" value="1"  class="txt w_not"/> 个</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><i class="red">*</i>餐盒价格：</th>
+                        <td><input type="text"  class="txt w_not"/> 元/个</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">菜品说明：</th>
+                        <td><textarea name="" cols="" rows="" class="cp"></textarea></td>
+                      </tr>
+                    </table>
+                </div>
+                
+            	
+			</div>
+            
+            <div class="vip_btn left130 top50 ">
+                <div class="btn fabu_btn"><input type="button" value="保存" /></div>
+                <div class="btn save_btn"><input type="button" value="保存并上架"/></div>
+                <div class="btn gray_btn"><input type="button" value="取消" /></div>
+                
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+
+</body>
+<script type="text/javascript" src="../js/icheck.js"></script>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".select select").selectbox();
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+	  
+//可选规格切换
+	$(".s2").on('ifUnchecked', function(event) {
+		  	$(".show_guige").hide();
+	  });
+    $(".s2").on('ifChecked', function(event) {
+			$(".show_guige").show();
+	  });
+//是否限时切换
+	$(".s3,.s4").on('ifUnchecked', function(event) {
+		  	$(this).parent().parent().next(".show_date").hide();
+	  });
+    $(".s3,.s4").on('ifChecked', function(event) {
+			$(this).parent().parent().next(".show_date").show();
+	  });
+
+//分类添加更多
+	  
+	  $(".add_nm").click(function(event){
+		  event.preventDefault();
+		  var i = $(".guige_list table:last").find("i").html();	
+		  $(this).parent().parent().parent().parent("table").clone().appendTo(".guige_list");
+	  	  $(".guige_list table:last").find(".add_nm").removeClass("add_nm").addClass("del_nm").html("删除分类");
+		  $(".guige_list table:last").find(".add_del").html("");
+		  $(".guige_list table:last").find("thead input").attr("placeholder","如：温度");
+		  $(".guige_list table:last").find("tbody input").attr("placeholder","如：热");
+		  i++;
+		  $(".guige_list table:last").find("i").html(i);
+		  $(".guige_list .del_nm").click(function(event){
+			  event.preventDefault();
+			  $(this).parent().parent().parent().parent("table").remove();
+		  })
+	  });
+	  
+//属性添加更多
+	  $(".add_btn").live({
+		   click:
+		   function()
+		   {
+		      var em = $(this).parent().parent().parent("tbody").find("tr:last").find("em").html();	
+			  em++;
+			  $(this).parent().parent("tr").clone().appendTo($(this).parent().parent().parent());
+			  $(this).parent().parent().parent("tbody").find("tr:last").find("em").html(em);
+			  $(this).parent().parent().siblings("tr").find(".add_btn").removeClass("add_btn").addClass("del_btn");
+		   }
+		});	
+		
+		$(".guige_list .del_btn").live({
+		   click:
+		   function()
+		   {
+			  $(this).parent().parent("tr").remove();
+		   }
+		});	
+
+//规格提示
+	$(".guige").hover(function(){
+		$(this).find(".show_guige_img").show();
+	},function(){
+		$(this).find(".show_guige_img").hide();
+		});
+
+});
+</script>
+</html>

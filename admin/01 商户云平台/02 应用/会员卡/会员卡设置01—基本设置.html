@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡设置01—基本设置</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<link href="../css/theme.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+
+<script type="text/javascript" src="../js/icheck.js"></script>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script type="text/javascript">
+   $(document).ready(function(){
+	  $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+	
+	$(".select select").selectbox();
+	 
+	});
+</script>
+
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">会员卡</div>
+                        
+        <ul>
+        	<li class="on"><a href="">会员卡管理</a></li>
+        	<li><a href="">推广渠道管理</a></li>
+            <li><a href="">客户查询</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">会员卡设置</div>
+        <article class="boxRightCon clearfix">
+        	<section class="iphone5" id="iphone5">
+				<div class="yulan_box">
+					<!--预览 start-->
+					<section class="phone-cont">
+					  <img src="../images/yulan/theme.jpg" alt="" width="100%" />
+					</section>
+					<!--预览 end-->
+            		<div class="vote red">注：此效果图仅供参考</div>
+				</div>
+            </section>
+            <section class="VipCont">
+            	<div class="step step-1">
+                    <span class="on">基本设置</span><span>特权设置</span><span>其他信息</span><span>保存发布</span>
+                </div>
+                <div class="VipConUl CommonInput">
+                	<ul class="jcsz">
+                    	<li id="vip_lxradio" class="vip_lxradio">
+                        	<span class="name"><span class="red">*</span>类型选择：</span>
+                            <div class="skin-minimal">
+								<input type="radio" id="minimal-radio-1" name="minimal-radio" checked />
+								<label for="minimal-radio-1">储值型</label>
+								<input type="radio" id="minimal-radio-2" name="minimal-radio" />
+								<label for="minimal-radio-2">积分型</label>
+								<input type="radio" id="minimal-radio-3" name="minimal-radio" />
+								<label for="minimal-radio-3">折扣型</label>
+                                <input type="radio" id="minimal-radio-4" name="minimal-radio" />
+								<label for="minimal-radio-4">混合型</label>
+							</div>
+                            <div class="type_vote"><span class="jt"></span><p>用户先在会员卡中储值，此后凭借卡号密码即可使用会员卡中余额进行消费</p></div>
+                            <div class="type_vote"><span class="jt jt2"></span><p>用户先在会员卡中储值，此后凭借卡号密码即可使用会员卡中余额进行消费</p></div>
+							<div class="type_vote"><span class="jt jt3"></span><p>用户先在会员卡中储值，此后凭借卡号密码即可使用会员卡中余额进行消费</p></div>
+                            <div class="type_vote"><span class="jt jt4"></span><p>用户先在会员卡中储值，此后凭借卡号密码即可使用会员卡中余额进行消费</p></div>
+                        </li>
+                    	<li class="kpm"><span class="name"><span class="red">*</span>会员卡名称：</span><input name="text" type="text" value="建议填写品牌名,最多十个汉字" onFocus="if(value=='建议填写品牌名,最多十个汉字'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='建议填写品牌名,最多十个汉字'}"/></li>
+                        <li class="kpm"><span class="name"><span class="red">*</span>会员卡数量：</span><input name="text" type="text" value="请输入整数" onFocus="if(value=='请输入整数'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='请输入整数'}"/></li>
+                    	<li class="kpm inputfile"><span class="name"><span class="red">*</span>会员卡图片：</span>
+                            <span class="file"><button>上传图片</button></span>
+                            <span style="margin-left:100px" class="name">建议尺寸</span>（图片640px*278px）
+                            
+                        </li>
+                        <li class="yxq"><span class="name"><span class="red">*</span>有效期：</span><input class="date" id="stime" name="stime" type="text" ><span class="mlr5">—</span><input class="date" id="etime" name="etime" type="text" ></li>
+                        <li class="kpm ceat"><span class="name">字体颜色：</span><span class="QrComponent" id="QrColorPicker0" onclick="javascript:void(QrColorPicker.popupPicker('QrColorPicker0'));"><img src="images/cssDesigner/transparentpixel.gif" width="1" height="1" align="absmiddle" id="QrColorPicker0#color" style="width:40px;height:20px;border:1px inset gray;background-color:#000000;cursor:pointer;">
+<a href="javascript:void('QrColorPickerQrColorPicker0');" style="text-decoration: underline;"><span id="QrColorPicker0#text">#000000</span></a></span></li>
+						<li class="yxq h60">
+                        	<span class="name"><span class="red">*</span>是否放入微信卡券包：</span>
+                            <div class="select">
+                            <select>
+                                <option value="01">是</option>
+                                <option value="02">否</option>
+                            </select>
+                            </div>
+                            <em class="ts"><a href="javascript:;"></a><div class="help_show"><b></b>111111111</div></em>
+                        </li>
+                        <li class="yxq yes">
+                        	<span class="name">Appid：</span>
+                            <input name="text" type="text" />
+                        </li>
+                        <li class="yxq yes">
+                        	<span class="name">Appsecret：</span>
+                            <input name="text" type="text" />
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+                <input type="button" value="下一步" name="" class="next_btn" />
+            </section>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+<script type="text/javascript" src="../js/Main.js"></script>
+<script>
+$(function(){
+	//提示
+	$(".ts").hover(function(){
+		$(this).find(".help_show").show();
+	},function(){
+		$(this).find(".help_show").hide();
+	});
+	
+	//是否放入微信卡券包切换
+	  $(".select select").change(function(){
+		if(($(this).val()) == 01){
+			$(".yes").show();
+		}
+		if(($(this).val()) == 02){
+			$(".yes").hide();
+		}
+	});
+});
+</script>
+
+</html>

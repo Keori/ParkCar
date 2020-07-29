@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- main start -->
+<div class="inventoryChange">
+    <!-- <div class="layerTit">库存变更</div> -->
+    <div class="curInventory">
+        <div class="inventoryItem"><div class="cell name">当前数量：</div><div class="cell num">20</div></div>
+
+    </div>
+    <div class="afterChange">
+        <div class="inventoryItem">
+            <div class="cell name">变更：</div>
+            <div class="cell">
+                <ul class="checkWrap radioWrap">
+                    <li><input name="radio" type="radio" id="add" checked /><label for="add">添加库存</label></li>
+                    <li><input name="radio" type="radio" id="reduce" /><label for="reduce">减少库存</label></li>
+                </ul>
+            </div>
+        </div>
+        <div class="inventoryItem CommonInput">
+            <div class="cell name">变更数量：</div>
+            <div class="cell"><input name="text" type="text"/></div>
+            <div class="clear"></div>
+        </div>
+        <div class="sm">规则：变更数量不能比当前数量大。</div>
+    </div>
+    <div class="tc_btn success_btn"><span class="org_btn"><input name="submit" type="button" value="确定"/></span><span class="jb_btn"><input name="reset" type="button" value="取消"/></span></div>
+</div>
+<!-- main end -->
+</body>
+</html>

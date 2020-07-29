@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/Main.js"></script> -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <!--[if IE]>
+    <script type="text/javascript" src="../js/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('*'); </script>
+    <![endif]-->
+    <!-- <script src="../js/jQselect.js" type="text/javascript"></script> -->
+    <script type=text/javascript>
+        $(document).ready(function() {
+            $(".select select").selectbox();
+        });
+        function previewImage(file)
+        {
+            let div = document.getElementById('preview');
+            if (file.files && file.files[0])
+            {
+                div.innerHTML ='<img id=imghead>';
+                let img = document.getElementById('imghead');
+                img.onload = function(){
+                    var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                    img.width  =  rect.width;
+                    img.height =  rect.height;
+                    img.style.marginTop = rect.top+'px';
+                };
+                let reader = new FileReader();
+                reader.onload = function(evt){img.src = evt.target.result;};
+                reader.readAsDataURL(file.files[0]);
+            }
+            else
+            {
+                let sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+                file.select();
+                let src = document.selection.createRange().text;
+                div.innerHTML = '<img id=imghead>';
+                let img = document.getElementById('imghead');
+                img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+                let rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+                div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+            }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            let param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+    </script>
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li><a href="ParkComputed.html">停车统计</a></li>
+            <li><a href="">车牌管理</a></li>
+            <li><a href="Manage.html">营销管理</a></li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">营销管理>添加模板</div>
+        <article class="boxRightCon">
+            <ul class="sel_mod">
+                    <li>
+                        <span class="name sel_th2">模板类型：</span>
+                        <span class="radioBox"><input name="radio1" type="radio" value='支付广告完成' id="radio" checked /><label for="radio1" value='1'>支付广告完成</label></span>
+                    </li>
+                    <li>
+                        <span class="name sel_th2">广告banner：</span>
+                        <div class="selectionDisplay" id="preview"><img id="imghead" border=0 src="../images/LoadIMG.png" alt=""></div>
+                        <div class="formInlineBlock jb_btn filePic"><input onchange="previewImage(this)" name="file" type="file" id="filepic" accept="image/png, image/jpeg, image/gif, image/jpg"/><label for="filepic" class="changeColor">选择图片</label></div></li>
+                    <li>
+                        <span class="name sel_th2">跳转链接：</span>
+                        <span class="radioBox"><input name="radio" id="radio3" class="write" checked /></span>
+                    </li>
+                    <li>
+                        <span class="name sel_th2">状态：</span>
+                        <span class="radioBox"><input value=2 name="radio" type="radio" id="radio1" checked /><label for="radio1">启用</label></span>
+                        <span class="radioBox"><input value=3 name="radio" type="radio" id="radio2" /><label for="radio2">禁用</label></span>
+                    </li>
+                </ul>
+            <div class="clear"></div>
+        </article>
+        <div class="vip_btn center">
+            <div class="btn fabu_btn"><a class='save'>保存</a></div>
+            <div class="btn save_btn"><a class='close'>取消</a></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<!-- <script type="text/javascript">
+    new Vue({
+        el: '#content',
+        data(){
+            return{
+                ManageCValue:{
+                    PayADFinish: '支付广告完成',
+                    Start: '启用',
+                    Forbidden: '禁用'
+                }
+            }
+        },
+        methods:{
+            save(){
+                window.location.href = 'Manage.html?content&value=1&value=2&value=3'
+            },
+            close(){
+                window.location.href = 'Manage.html'
+            }
+        }
+    });
+</script> -->
+<script type='text/javascript'>
+$(function(){
+    let add = {
+        /*暂时缺少[ID:广告模板id];[tempCategoryCode:广告模板类型代码];
+        //[templateNo:广告模板代码];[templateUrl:广告模板url];
+        //[templateStatus:广告模板图片];[tempCatugoryDesc:广告模板类型名称];
+        //[lastUpdatedBy:广告最后更新人];[lastUpdatedTime:广告最后更新时间]*/
+        // 模板编号【原型】 : $('.ModuleCode').val(),
+        templateName: $('.ModuleName').val(), //模板名称
+        templateId: $('.ModuleType').val(), //模板类型
+        templateStatus: $('.state').val(), //状态
+        createTime: $('.CreateTime').val(), //创建时间
+        createBy: $('.CreatePerson').val(), //创建人
+        note: $('.reMark').val() //备注
+    }
+    $('.save').click(function(){
+            window.location.href = 'Manage.html'
+            $.ajax({
+            url: 'http://park.ardy0220.top:9999/merchant/Advertisement/add',
+            type: 'post',
+            headers: {"Content-Type":"application/json;charset=UTF-8"},
+            data: JSON.stringify(add),
+        })
+    })
+
+    $.ajax({
+        url: 'http://park.ardy0220.top:9999//merchant/Advertisement/update',
+        type: 'PATCH',
+        headers: {"Content-Type":"application/json;charset=UTF-8"},
+    })
+    
+    $('.close').click(function(){
+        window.location.href = 'Manage.html'
+    })
+})
+</script>
+</body>
+<style>
+.boxRightCon{
+    display: flex;
+    justify-content: center;
+}
+.save_btn>a{
+    background:#DDDDDD
+}
+.write{
+    width: 312px;
+}
+.sel_mod>li{
+    display: flex;
+    margin: 0 0 48px 0;
+}
+.sel_mod>li:nth-child(2){
+    margin: 0 0 75px 0;
+}
+.changeColor{
+    background: #169BD5 !important;
+}
+.name{
+    display: block;
+    width: 100px;
+}
+.photo{
+    display: block;
+    width: 300px;
+    height: 150px;
+    background: rgba(233,233,233,0.6);
+    color: #A399A3;
+    text-align: center;
+    line-height: 150px;
+}
+.file {
+    display: inline-block;
+    background: #169BD5;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align: center;
+    margin-left: 12px;
+    width: 100px;
+    height: 34px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+</style>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <link href="../laydate/laydate.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li class="on"><a href="">停车统计</a></li>
+            <li><a href="">车牌管理</a></li>
+            <li>
+                <h1><a class='pagetitle' href="javascript:;" @click='ManageType'>营销管理</a><i></i></a>
+                <div class='secondary' v-show='type'>
+                    <h2 :class="{active:changeGray===1}" @click='change(1)'>
+                        <a class='nextselect' href="Manage.html">
+                            <span class='blockText'>模板类型</span>
+                        </a>
+                    </h2>
+                    <h2 :class="{active:changeGray===2}" @click='change(2)'>
+                        <a class='nextselect' href="Manage2.html">
+                            <span class='blockText'>广告类型</span>
+                        </a>
+                    </h2>
+                </div>
+            </li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">停车统计</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist viplist_formlist_1">
+                <ul>
+                    <li>
+                        <span class="name">支付时间：</span><input v-model='filterSearch.selectTime' onclick="laydate()" name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <span class="name">至</span><input v-model='filterSearch.selectTime' onclick="laydate()" name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <span class="name">车牌：</span><input v-model='filterSearch.parkcar' name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <div class="org_btn"><a @click='Search'>查询</a></div>
+                    </li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+                <tr>
+                    <th>序号</th>
+                    <th>车牌号</th>
+                    <th>OpenID</th>
+                    <th>昵称</th>
+                    <th>入场时间</th>
+                    <th>出场时间</th>
+                    <th>停车时间</th>
+                    <th>停车费</th>
+                    <th>实收金额</th>
+                    <th>支付时间</th>
+                </tr>
+                <tr v-for='(item,index) in Park' v-if='index<6'>
+                    <td>{{index+1}}</td>
+                    <td>{{item.plateNo}}</td>
+                    <td>{{item.OpenId}}</td>
+                    <td>{{item.nickName}}</td>
+                    <td>{{item.entryTime}}</td>
+                    <td>{{item.payTime}}</td>
+                    <td>{{item.elapsedTime}}</td>
+                    <td>{{item.payable}}</td>
+                    <td class="red">{{item.OfficialMoney}}</td>
+                    <td>{{item.payTime}}</td>
+                </tr>
+            </table>
+            <div class="bg_f3 page">共 {{pages.pageSize}} 条数据
+                <div class="page_right fr">
+                    <a href="javascript:;">首页</a>
+                    <a href="javascript:;">上一页</a>
+                    <span class='itempage'
+                        v-for='(paging,index) in items'
+                        :key='index'>
+                        <a href="javascript:;" :class='{active:cur===index}' @click='changecur(index)'>{{paging}}</a>
+                    </span>
+                    <a href="javascript:;">下一页</a>
+                    <a href="javascript:;">末页</a>
+                </div>
+            </div>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<script  type="text/javascript">
+    new Vue({
+        el: '#content',
+        data(){
+            return{
+                cur: 0,
+                type: false,
+                changeGray: '',
+                filterSearch:{
+                    parkcar: '',
+                    selectTime: '',
+                },
+                Park: [],
+                pages:{},
+            }
+        },
+        methods:{
+            Search(){
+                let params = this.filterSearch;
+                $.ajax({
+                url: 'http://park.ardy0220.top:9999/merchant/car/paylist',
+                type: 'get',
+                data: params,
+                statusCode:{
+                    404:function(){
+                        alert('网络错误')
+                    }
+                },
+                success:(params) => {
+                    this.Park = params.page.list
+                    this.pages = params.page
+                    console.log(this.pages);
+                    console.log(this.Park)
+                }
+            })
+            },
+            ManageType(){
+                if(this.type === false){
+                    this.type = true
+                }else{
+                    this.type = false
+                }
+            },
+            change(num){
+                this.changeGray = num
+            },
+            changecur(index){
+                this.cur = index
+            }
+        },
+        computed:{
+            items(){
+                const c = this.pages.currPage
+                const t = this.pages.totalPage
+                if(c){
+                    return [1,2,3,4,5]
+                }else if(c >=6){
+                    return ['···',c-1,c,c+1,'···',t]
+                }else{
+                    return [1,2,3,4,5,'···',t]
+                }
+            }
+        },
+        created(){
+            this.Search()
+        }
+    })
+</script>
+</body>
+<script src="../laydate/laydate.js"></script>
+<style>
+.pagetitle,.nextselect{
+    font-weight: normal;
+}
+.nextselect{
+    font-size: 14px;
+}
+.active{
+    background: #EEEEEE
+}
+.blockText{
+    display: block;
+    width: 130px;
+    height: 37.6px;
+    margin: auto;
+}
+.active{
+    background: #34495e !important;
+    border-color: #34495e;
+    color: #fff;
+}
+</style>
+</html>
+
+
+<!-- let params = {}
+$.ajax({
+    url: 'http://park.ardy0220.top:9999/merchant/car/list',
+    type: 'get',
+    data: params,
+    statusCode:{
+        404:() => {
+            alert('网络错误')
+        }
+    },
+    success:(params) => {
+        this.Park = params.page.list
+        console.log(this.Park)
+    }
+}) -->
+<!-- 车牌管理 -->

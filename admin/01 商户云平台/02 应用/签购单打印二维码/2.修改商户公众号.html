@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+<!-- header start -->
+<header class="header index_header">
+    <div class="top w1170">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content content1170">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">签购单打印二维码</div>
+                        
+        <ul>
+        	<li class="on"><a href="">商户公众号管理</a></li>
+        	<li><a href="">二维码打印配置列表</a></li>
+            <li><a href="">二维码活动领取列表</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">修改商户公众号</div>
+		<article class="chagePhone findPs CommonInput">
+			<ul class="add_gzh">
+				<li class="c9"><span class="name">商户名：</span><p>深圳市丕微科技企业有限公司</p></li>
+				<li class="c9"><span class="name">商户公众号：</span><input name="text" type="text" value="shasha100872" onFocus="if(value=='shasha100872'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='shasha100872'}"/></li>
+				<li><span class="name">APP ID：</span><input name="text" type="text" value=""/><span class="color9">(请登录微信公众平台查看APPID和APPKEY)</span></li>
+				<li><span class="name">APP KEY：</span><input name="text" type="text" value=""/></li>
+				<li><span class="name">公众号属性：</span>
+					<div class="select select5">
+					<select id="a" style="display: none" name="a">
+						<option value="1">私有</option>
+						<option value="2">公有</option>
+					</select>
+					</div>
+				</li>
+				<li class="c9"><span class="name">设置库存：</span><input name="text" type="text" value="5" onFocus="if(value=='5'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='5'}"/></li>
+				<li>
+					<div class="vip_btn">
+						<span class="btn fabu_btn"><input name="submit" type="button" value="确定"></span>
+					</div>
+				</li>
+			</ul>
+		</article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+</html>

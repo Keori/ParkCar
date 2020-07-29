@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>016菜品统计</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/waimai.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+        <ul>
+        	<li><a href="">基本信息管理</a></li>
+            <li><a href="">配送员管理</a></li>
+            <li><a href="">店铺公告</a></li>
+            <li><a href="">分类管理</a></li>
+            <li><a href="">菜品管理</a></li>
+            <li><a href="">优惠管理</a></li>
+            <li><a href="">用户评价</a></li>
+            <li class="on">
+            	<a href="">外卖统计</a>
+                <ul>
+                	<li><a href="">订单统计</a></li>
+                    <li class="on"><a href="">菜品统计</a></li>
+                    <li><a href="">客户统计</a></li>
+                    <li><a href="">退单统计</a></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">菜品统计</div>
+        <article class="boxRightCon">
+            <div class="CommonInput RightCon_first">
+                <ul>
+                    <li><span class="name">菜品编号：</span><input type="text" name="text" value="" /></li>
+                     <li><span class="name">菜品名称：</span><input type="text" name="text" value="" /></li>
+                    <li><span class="name">所属分类：</span>
+						<div class="select select2">
+						<select id="a" style="display: none" name="a">
+							<option value="1">全部</option>
+						</select>
+						</div>
+					</li>
+                    <li class="org_btn"><input name="submit" type="submit" value="查询"/></li>
+                </ul>
+            </div>
+			<div class="menutypes skin-minimal">
+            	<p>全部菜品<span class="red">50</span>份，<span class="red">40</span>份正在销售，<span class="red">5</span>份已卖光，<span class="red">5</span>份已下架</p>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="order_table center_table top10 ">
+					<thead>
+						<tr>
+                        	<th width="100">菜品编号</th>
+							<th>菜品名称</th>
+							<th>所属分类</th>
+							<th>今日销量</th>
+							<th>昨日销量</th>
+                            <th>月销售量</th>
+							<th><a href="" class="up">累计销售量</a></th>
+                            <th><a href="" class="down">累计获赞数</a></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+                        	<td>fe515315</td>
+							<td>小骚肉</td>
+							<td>米饭</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>1000</td>
+                            <td>10000</td>
+                            <td>50</td>
+						</tr>
+                        <tr>
+                        	<td>fe515315</td>
+							<td>小骚肉</td>
+							<td>米饭</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>1000</td>
+                            <td>10000</td>
+                            <td>50</td>
+						</tr>
+                        <tr>
+                        	<td>fe515315</td>
+							<td>小骚肉</td>
+							<td>米饭</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>1000</td>
+                            <td>10000</td>
+                            <td>50</td>
+						</tr>
+                        <tr>
+                        	<td>fe515315</td>
+							<td>小骚肉</td>
+							<td>米饭</td>
+                            <td>100</td>
+                            <td>100</td>
+                            <td>1000</td>
+                            <td>10000</td>
+                            <td>50</td>
+						</tr>
+					</tbody>
+				</table>
+                <div class="page">共 99 项 
+					<div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+				</div>
+				
+			</div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+})
+</script>
+</html>

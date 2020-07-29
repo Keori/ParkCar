@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<meta name="format-detection" content="telephone=no">
+	<meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name="viewport">
+	<title>停车场重庆</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src='./js/jquery.min.js'></script>
+	<script src="js/vue.js"></script>
+	<script>
+		// class
+		! function(navigator) {
+			let userAgent = navigator.userAgent;
+			documentElement = document.documentElement;
+			if(userAgent.match(/micromessenger\/5/gi)) {
+				documentElement.className += " mobile wx_mobile wx_mobile_5";
+			} else if(userAgent.match(/micromessenger/gi)) {
+				documentElement.className += " mobile wx_mobile";
+			} else if(userAgent.match(/ucbrowser/gi)) {
+				documentElement.className += " mobile uc_mobile";
+			} else if(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+				documentElement.className += " mobile";
+			} else if(userAgent.toLowerCase().match(/msie/gi) && (parseFloat(userAgent.toLowerCase().match(/msie ([0-9]{1,}[\.0-9]{0,})/i)[1] || 999) < 9)) {
+				documentElement.className += " pc pc-ie pc-ie8";
+			} else if(userAgent.toLowerCase().match(/msie/gi) || navigator.msPointerEnabled || navigator.pointerEnabled) {
+				documentElement.className += " pc pc-ie";
+			} else {
+				documentElement.className += " pc";
+			}
+		}(navigator);
+		// meta
+			! function(userAgent) {
+				let screen_w = parseInt(window.screen.width),
+					scale = screen_w / 1242;
+				if (/Android (\d+\.\d+)/.test(userAgent)) {
+					let version = parseFloat(RegExp.$1);
+					document.write(version > 2.3 ? '<meta name="viewport" content="width=1242, minimum-scale = ' + scale + ", maximum-scale = " + scale + ', target-densitydpi=device-dpi">' : '<meta name="viewport" content="width=1242,target-densitydpi=device-dpi">');
+				} else {
+					document.write('<meta name="viewport" content="width=1242, user-scalable=no, target-densitydpi=device-dpi">');
+				}
+			}(navigator.userAgent);
+	</script>
+</head>
+<body>
+<section id='sections'>
+	<div id='sections'>
+		<!-- <div class="carNum">粤B<Bspan class="dot"></Bspan>159987</div> -->
+		<div class="carNum">{{Park.orderNo}}</div>
+		<div class="stopCarMsg">
+			<ul>
+				<li><div class="itemName">入场时间</div><div class="itemText">{{Park.entryTime}}</div></li>
+				<li><div class="itemName">停车时间</div><div class="itemText">{{Park.elapsedTime}}</div></li>
+				<li><div class="itemName">停车费用</div><div class="itemText"><span class="org">{{Park.payable}}</span>元</div></li>
+			</ul>
+		</div>
+		<div class="box">
+			<div class="payWayList">
+				<ul>
+					<li><input name="payWay" type="radio" id="payway1"><label for="payway1"><span class="payIcon icon1"></span>一网通支付</label></li>
+					<li><input name="payWay" type="radio" id="payway2"><label for="payway2"><span class="payIcon icon2"></span>微信支付</label></li>
+					<li><input name="payWay" type="radio" id="payway3"><label for="payway3"><span class="payIcon icon3"></span>支付宝支付</label></li>
+				</ul>
+			</div>
+			<div class="submitBtn orgbtn"><a class='Pay' href='PaySuccess.html'><button id='change' type="submit">支付</button></a></div>
+		</div>
+	</div>
+</section>
+</body>
+<script type='text/javascript'>
+new Vue({
+	el: '#sections',
+	data(){
+		return{
+			Park:{},
+			MSG:{
+				plateNo: 'CRM001',
+				parkId:'-1',
+				}
+		}
+	},
+	created(){
+		let url = location.search
+		this.id = url.split('?=')[1]
+		console.log(this.id);
+		this.change1 = this.id.split("&-1")[0]
+		this.plateNo  = this.change1.split(",")[0]
+		console.log(this.change1)
+		console.log(this.plateNo)
+		let params = this.MSG;
+			console.log(this.MSG)
+			$.ajax({
+			url: 'http://q214e81040.iask.in:32642/user/order/payinfo',
+			type: 'get',
+			data: params,
+			statusCode:{
+				404:() => {
+					alert('网络错误')
+				}
+			},
+			success:(params) => {
+				this.Park = params.data
+			}
+		})
+	}
+})
+</script>
+</html>

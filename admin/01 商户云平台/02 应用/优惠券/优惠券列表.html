@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">优惠券</div>
+        <ul>
+        	<li><a href="">创建优惠券</a></li>
+            <li class="on"><a href="">优惠券列表</a></li>
+            <li><a href="">领券记录</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">优惠券列表</div>
+        <article class="boxRightCon">
+        	<div class="CommonInput RightCon_first">
+            	<ul>
+                	<li><span class="name">创建时间</span><input type="text" name="text"/> — <input type="text" name="text"/></li>
+                	<li><span class="name">券名称</span><input type="text" name="text"/></li>
+                	<li><span class="name">类型</span>
+						<div class="select">
+						<select id="a" style="display: none" name="a">
+							<option value="1">已使用</option>
+							<option value="2">未使用</option>
+							<option value="3">已过期</option>
+						</select>
+						</div>
+					</li>
+                    <li class="org_btn"><input name="submit" type="submit" value="搜索"/></li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable2">
+            	<tr>
+                	<th>创建时间</th>
+                    <th>券名称</th>
+                    <th>编号</th>
+                    <th>类型</th>
+                    <th>到期时间 </th>
+                    <th>发放数-领取数-使用数</th>
+                    <th>操作</th>
+                </tr>
+                <tr>
+                    <td>2014/05/15</td>
+                    <td class="blue">竹子林全单九折</td>
+                    <td>123456 </td>
+                    <td>返利券</td>
+                    <td>2014/05/18 </td>
+                    <td>1000-800-500</td>
+                    <td class="org"><a href="">发布</a><a href="">修改</a><a href="">删除</a></td>
+                </tr>
+                <tr>
+                    <td>2014/05/15</td>
+                    <td class="blue">竹子林全单九折</td>
+                    <td>123456 </td>
+                    <td>返利券</td>
+                    <td>2014/05/18 </td>
+                    <td>无限-800-200 </td>
+                    <td class="org"><a href="">发布</a><a href="">修改</a><a href="">删除</a></td>
+                </tr>
+                <tr>
+                    <td>2014/05/15</td>
+                    <td class="blue">竹子林全单九折</td>
+                    <td>123456 </td>
+                    <td>代金券</td>
+                    <td>2014/05/18 </td>
+                    <td>无限-800-200 </td>
+                    <td class="org"><a href="">发布</a><a href="">修改</a><a href="">删除</a></td>
+                </tr>
+                <tr>
+                    <td>2014/05/15</td>
+                    <td class="blue">竹子林全单九折</td>
+                    <td>123456 </td>
+                    <td>买赠券</td>
+                    <td>2014/05/18 </td>
+                    <td>无限-800-200 </td>
+                    <td class="org"><a href="">中止</a><span class="blue"><a href="">查看推广连接</a></span></td>
+                </tr>
+            </table>
+            <div class="bg_f3 page">共 99 项 
+            	<div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <!-- <script type=text/javascript>
+        // $(document).ready(function() {
+        //     $(".select select").selectbox();
+        // });
+        function previewImage(file)
+        {
+            let div = document.getElementById('preview');
+            if (file.files && file.files[0])
+            {
+                div.innerHTML ='<img id=imghead>';
+                let img = document.getElementById('imghead');
+                // img.onload = function(){
+                //     let rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                //     img.width  =  rect.width;
+                //     img.height =  rect.height;
+                //     img.style.marginTop = rect.top+'px';
+                // };
+                let reader = new FileReader();
+                reader.onload = function(evt){img.src = evt.target.result;};
+                reader.readAsDataURL(file.files[0]);
+            }
+            else
+            {
+                let sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+                file.select();
+                let src = document.selection.createRange().text;
+                div.innerHTML = '<img id=imghead>';
+                let img = document.getElementById('imghead');
+                img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+                let rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+                div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+            }
+        }
+        function clacImgZoomParam( maxWidth, maxHeight, width, height ){
+            let param = {top:0, left:0, width:width, height:height};
+            if( width>maxWidth || height>maxHeight )
+            {
+                rateWidth = width / maxWidth;
+                rateHeight = height / maxHeight;
+
+                if( rateWidth > rateHeight )
+                {
+                    param.width =  maxWidth;
+                    param.height = Math.round(height / rateWidth);
+                }else
+                {
+                    param.width = Math.round(width / rateHeight);
+                    param.height = maxHeight;
+                }
+            }
+            param.left = Math.round((maxWidth - param.width) / 2);
+            param.top = Math.round((maxHeight - param.height) / 2);
+            return param;
+        }
+    </script> -->
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li><a href="ParkComputed.html">停车统计</a></li>
+            <li><a href="ParkManage.html">车牌管理</a></li>
+            <li>
+                <h1><a class='pagetitle' href="javascript:;" @click='ManageType'>营销管理</a><i></i></a>
+                <div class='secondary' v-show='type'>
+                    <h2 :class="{active:changeGray===1}" @click='change(1)'>
+                        <a class='nextselect' href="Manage.html">
+                            <span class='blockText'>模板类型</span>
+                        </a>
+                    </h2>
+                    <h2 :class="{active:changeGray===2}" @click='change(2)'>
+                        <a class='nextselect' href="Manage2.html">
+                            <span class='blockText'>广告类型</span>
+                        </a>
+                    </h2>
+                </div>
+            </li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">营销管理>模板类型>模板类型增添</div>
+        <article class="boxRightCon">
+            <ul class="sel_mod">
+                    <li>
+                        <span class="name sel_th2">模板类型：</span>
+                        <div class='selectSet'>
+                            <select name="" id="select" @onchange='selectmes'>
+                                <option value="-1">--请选择--</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="name sel_th2">广告banner：</span>
+                        <div class="selectionDisplay" id="preview"><img :src="updataMessage.templateImg" alt=""></div>
+                        <div class="formInlineBlock jb_btn filePic"><input @change="upImg($event,'front')" name="file" type="file" id="filepic" accept="image/png, image/jpeg, image/gif, image/jpg"/><label for="filepic" class="changeColor">选择图片</label></div></li>
+                    <li>
+                        <span class="name sel_th2">跳转链接：</span>
+                        <span class="radioBox"><input name="radio" id="radio3" class="write" checked v-model='updataMessage.templateUrl'/></span>
+                    </li>
+                    <li>
+                        <span class="name sel_th2">状态：</span>
+                        <span class="radioBox"><input value=2 name="radio" type="radio" id="radio1" checked  v-model='updataMessage.templateStatus'/><label for="radio1">启用</label></span>
+                        <span class="radioBox"><input value=3 name="radio" type="radio" id="radio2" v-model='updataMessage.templateStatus' /><label for="radio2">禁用</label></span>
+                    </li>
+                </ul>
+            <div class="clear"></div>
+        </article>
+        <div class="vip_btn center">
+            <div class="btn fabu_btn"><a @click='save'>保存</a></div>
+            <div class="btn fabu_btn"><a @click='updatas'>更新</a></div>
+            <div class="btn fabu_btn"><a @click='removes'>删除</a></div>
+            <div class="btn save_btn"><a class='close'>取消</a></div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<script type='text/javascript'>
+new Vue({
+    el: '#content',
+    data(){
+        return{
+            changeGray: '',
+            type: false,
+            add:[],
+            stora: {},
+            remove: {},
+            updata: {},
+            id: '',
+            Img:'',
+            formData: new FormData(),
+            updataMessage: {
+                id: "",
+                templateId: "",
+                templateName: "",
+                templateUrl: "",
+                templateImg: "",
+                templateStatus:"" ,
+                tempCategoryCode: "",
+                note: "",
+            }
+        }
+    },
+    methods:{
+        save(){
+            let params = JSON.stringify(this.updataMessage)
+            $.ajax({
+            url: 'http://q214e81040.iask.in:32642/merchant/Advertisement/add',
+            type: 'post',
+            contentType: 'application/json;charset=uft-8',
+            data: params,
+            statusCode: {
+            404:() => {
+                alert('网络错误') //报错提示
+            }
+                },
+            success:(params) => {
+                this.add = params
+                console.log(this.add)
+                // window.location.href='Manage.html'
+            }
+        })
+        },
+        updatas(){
+            let url = location.search
+            this.id = url.split('?=')[1]
+            console.log(this.id);
+            let params = JSON.stringify({})
+            $.ajax({
+                url: 'http://q214e81040.iask.in:32642/merchant/Advertisement/info/' + this.id,
+                type: 'get',
+                statusCode: {
+                    404:() => {
+                        alert('网络错误')
+                    }
+                },
+                success:(params) => {
+                    this.stora = params.data
+                    console.log(this.stora);
+                    let param = JSON.stringify({})
+                    $.ajax({
+                    url:'http://q214e81040.iask.in:32642/merchant/Advertisement/update',
+                    type: 'patch',
+                    contentType: 'application/json;charset=uft-8',
+                    data:params,
+                    statusCode:{
+                        404:() => {
+                            alert('网络错误')
+                        }
+                    },
+                    success:(params) => {
+                        this.updata = params
+                        console.log(this.updata)
+                        // window.location.href='Manage.html'
+                    }
+                    })
+                }
+            })
+        },
+        removes(){
+            let url = location.search
+            this.id = url.split('?=')[1]
+            console.log(this.id);
+            let params = JSON.stringify({})
+            $.ajax({
+            url: 'http://q214e81040.iask.in:32642/merchant/Advertisement/delete/' + this.id,
+            type: 'delete',
+            statusCode: {
+                404:() => {
+                    alert('网络错误')
+                }
+            },
+            success:(params) => {
+                this.remove = params.data
+                console.log(this.remove);
+            }
+        })
+        },
+        ManageType(){
+            if(this.type === false){
+                this.type = true
+            }else{
+                this.type = false
+            }
+        },
+        change(num){
+            this.changeGray = num
+        },
+        upImg($event,type){
+				var that = this;
+				// 阻止默认事件
+				event.preventDefault();
+				var file = event.target.files[0];
+				var percentage;
+				if(file.size > 52428800) {
+					return false;
+				} else if(file.size < 51200) {
+					percentage = .7
+				} else if(file.size > 307200) {
+					percentage = .4
+				} else {
+					percentage = .5
+				}
+				var reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.onload = function(e) {
+					var canvas = document.createElement('canvas');
+					var cxt = canvas.getContext('2d');
+					var img = new Image();
+					img.src = this.result;
+					img.onload = function() {
+						var w = img.width;
+						var h = img.height;
+						canvas.width = w;
+						canvas.height = h;
+						cxt.drawImage(img, 0, 0, w, h);
+						//获取base64路径
+						var basestr = canvas.toDataURL(file.type, percentage);
+						var text = window.atob(basestr.split(",")[1]);
+						var buffer = new Uint8Array(text.length);
+						for(var i = 0; i < text.length; i++) {
+							buffer[i] = text.charCodeAt(i);
+						}
+						var blob = getBlob([buffer], file.type);
+						that.formData.set('file',blob,file.name); //传文件到formdata
+						var Form = that.formData;
+                        $.ajax({
+                            url:'http://q214e81040.iask.in:32642/sys/util/upload',
+                            type: 'post',
+                            data: Form,
+                            contentType: false,
+                            processData: false,
+                            statusCode:{
+                                404:() => {
+                                    alert('网络错误')
+                                }
+                            },
+                            success: (params) => {
+                                that.Img = params.data
+                                let data1 = JSON.stringify({"filename":that.Img})
+                                //工具接口SHOWIMG
+                                var url = 'http://q214e81040.iask.in:32642/sys/util/showimg';
+                                var xhr = new XMLHttpRequest();
+                                xhr.open('post', url, true);
+                                xhr.responseType = "blob";
+                                xhr.setRequestHeader("Content-type","application/json;charset=UTF-8");
+                                xhr.onload = function() {
+                                    if (this.status == 200) {
+                                        var blob = this.response;
+                                        that.updataMessage.templateImg= window.URL.createObjectURL(blob)
+                                    }
+                                }
+                                xhr.send(data1);
+                            }
+                        })
+					}
+				}
+			},
+            blobToDataURL(blob, callback) {
+                let a = new FileReader();
+                a.onload = function (e) { callback(e.target.result); }
+                a.readAsDataURL(blob);
+        },
+    },
+    created(){
+    }
+})
+	/**
+	 * 获取blob对象的兼容性写法
+	 * @param buffer
+	 * @param format
+	 * @returns {*}
+	 */
+    function getBlob(buffer, format) {
+		try {
+			return new Blob(buffer, {
+				type: format
+			});
+		} catch(e) {
+			var bb = new(window.BlobBuilder || window.WebKitBlobBuilder || window.MSBlobBuilder);
+			buffer.forEach(function(buf) {
+				bb.append(buf);
+			});
+			return bb.getBlob(format);
+		}
+	}
+</script>
+</body>
+<style>
+.nextselect{
+    font-size: 14px;
+}
+.active{
+    background: #EEEEEE
+}
+.blockText{
+    display: block;
+    width: 130px;
+    height: 37.6px;
+    margin: auto;
+}
+
+
+.selectSet{
+    position: relative;
+    width: 159px;
+    height: 23.2px;
+}
+.selectSet>select{
+    width: 159px;
+    height: 23.2px;
+    text-align: center;
+    text-align-last: center;
+}
+.selectSet>select>option{
+    text-align: center
+}
+
+
+
+.boxRightCon{
+    display: flex;
+    justify-content: center;
+}
+.save_btn>a{
+    background:#DDDDDD
+}
+.write{
+    width: 312px;
+}
+.sel_mod>li{
+    display: flex;
+    margin: 0 0 48px 0;
+}
+.sel_mod>li:nth-child(2){
+    margin: 0 0 75px 0;
+}
+.changeColor{
+    background: #169BD5 !important;
+}
+.name{
+    display: block;
+    width: 100px;
+}
+.photo{
+    display: block;
+    width: 300px;
+    height: 150px;
+    background: rgba(233,233,233,0.6);
+    color: #A399A3;
+    text-align: center;
+    line-height: 150px;
+}
+.file {
+    display: inline-block;
+    background: #169BD5;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    text-align: center;
+    margin-left: 12px;
+    width: 100px;
+    height: 34px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+</style>
+</html>

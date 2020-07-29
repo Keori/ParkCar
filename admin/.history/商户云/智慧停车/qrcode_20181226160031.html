@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生成二维码</title>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/qrcode.js"></script>
+<script src="../js/jquery.qrcode.min.js"></script>
+<script src='../js/vue.js'></script>
+<template>
+  <div id='select'>
+    <div id="qrcode"></div> <!-- 创建一个div，并设置id为qrcode -->
+  </div>
+</template>
+<script>
+new Vue({
+  el: '#select',
+  mounted () {
+    this.qrcode();
+  },
+  methods: {
+    qrcode() {
+      let qrcode = new QRCode('qrcode', {
+        width: 132,
+        height: 132,
+        text: 'https://www.baidu.com', // 二维码地址
+        colorDark : "#000",
+        colorLight : "#fff",
+      })
+    },
+  }
+})
+</script>
+<style scoped>
+
+</style>
+</body>
+</html>

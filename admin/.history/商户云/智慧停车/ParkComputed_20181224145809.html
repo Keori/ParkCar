@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <link href="../laydate/laydate.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li class="on"><a href="">停车统计</a></li>
+            <li><a href="ParkManage.html">车牌管理</a></li>
+            <li>
+                <h1><a class='pagetitle' href="javascript:;" @click='ManageType'>营销管理</a><i></i></a>
+                <div class='secondary' v-show='type'>
+                    <h2 :class="{active:changeGray===1}" @click='change(1)'>
+                        <a class='nextselect' href="Manage.html">
+                            <span class='blockText'>模板类型</span>
+                        </a>
+                    </h2>
+                    <h2 :class="{active:changeGray===2}" @click='change(2)'>
+                        <a class='nextselect' href="Manage2.html">
+                            <span class='blockText'>广告类型</span>
+                        </a>
+                    </h2>
+                </div>
+            </li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">停车统计</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist viplist_formlist_1">
+                <ul>
+                    <li>
+                        <span class="name">支付时间：</span><input id='timeData' name="text" type="text" style="width:100px;" onclick="laydate()"/>
+                    </li>
+                    <li>
+                        <span class="name">至</span><input id='timeData1' name="text" type="text" style="width:100px;" onclick="laydate()"/>
+                    </li>
+                    <li>
+                        <span class="name">车牌：</span><input v-model='filterSearch.plateNo' name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <div class="org_btn"><a @click='Search'>查询</a></div>
+                    </li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+                <tr>
+                    <th>序号</th>
+                    <th>车牌号</th>
+                    <th>OpenID</th>
+                    <th>昵称</th>
+                    <th>入场时间</th>
+                    <th>出场时间</th>
+                    <th>停车时间</th>
+                    <th>停车费</th>
+                    <th>实收金额</th>
+                    <th>支付时间</th>
+                </tr>
+                <tr v-for='(item,index) in Park'>
+                    <td>{{index+1}}</td>
+                    <td>{{item.plateNo}}</td>
+                    <td>{{item.OpenId}}</td>
+                    <td>{{item.nickName}}</td>
+                    <td>{{item.entryTime}}</td>
+                    <td>{{item.payTime}}</td>
+                    <td>{{item.elapsedTime}}</td>
+                    <td>{{item.payable}}</td>
+                    <td class="red">{{item.OfficialMoney}}</td>
+                    <td>{{item.payTime}}</td>
+                </tr>
+            </table>
+            <div class="bg_f3 page page-bar">共 {{pages.pageSize}} 条数据
+                <ul class='movepage'>
+                    <li v-if="currPage>1"><a @click="startpage()">首页</a></li>
+                    <li v-if="currPage>1"><a @click="currPage--">上一页</a></li>
+                    <li v-if="currPage==1"><a class="banclick">上一页</a></li>
+                    <li v-for="index in indexs" :class="{ 'active': currPage == index}">
+                    <a @click="btnClick(index)">{{ index }}</a>
+                    </li>
+                    <li v-if="currPage!=totalPage"><a @click="currPage++">下一页</a></li>
+                    <li v-if="currPage == totalPage"><a class="banclick">下一页</a></li>
+                    <li v-if="currPage!=totalPage"><a @click="endstart()">末页</a></li>
+                </ul>
+            </div>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<script  type="text/javascript">
+    new Vue({
+        el: '#content',
+        data(){
+            return{
+                totalPage: 8, //总页数
+                currPage: 1, //当前页码
+                pageSize: 6, //每页条数
+                totalCount: '', // 总计数
+                type: false,
+                changeGray: '',
+                filterSearch:{
+                    plateNo: '',
+                    payTimeStart: '',
+                    payTimeEnd: ''
+                },
+                Park: [],
+                pages:{},
+            }
+        },
+        computed:{
+            indexs(){
+            var left = 1;
+            var right = this.totalPage;
+            var ar = [];
+            if(this.totalPage>= 5){
+            if(this.currPage > 3 && this.currPage < this.totalPage-2){
+                left = this.currPage - 2
+                right = this.currPage + 2
+            }else{
+                if(this.currPage<=3){
+                left = 1
+                right = 5
+                }else{
+                right = this.totalPage
+                left = this.totalPage -4
+                }
+            }
+        }
+            while (left <= right){
+                ar.push(left)
+                left ++
+                }
+            return ar
+        },
+        },
+        watch:{
+            cur: function(oldValue , newValue){}
+        },
+        methods:{
+            btnClick(data){//页码点击事件
+                if(data != this.currPage){
+                    this.currPage = data
+                }
+            },
+            startpage(){
+                this.currPage = 1
+            },
+            endstart(){
+                this.currPage = this.totalPage
+            },
+            Search(){
+                let param = {}
+                this.filterSearch.payTimeStart = $('#timeData').val()
+                this.filterSearch.payTimeEnd = $('#timeData1').val()
+                let params =this.filterSearch;
+                console.log(this.filterSearch);
+                $.ajax({
+                url: 'http://q214e81040.iask.in:32642/merchant/car/paylist',
+                type: 'get',
+                data: params,
+                statusCode:{
+                    404:function(){
+                        alert('网络错误')
+                    }
+                },
+                success:(params) => {
+                    this.Park = params.page.list
+                    this.pages = params.page
+                    console.log(this.pages);
+                    console.log(this.Park)
+                }
+            })
+            },
+            ManageType(){
+                if(this.type === false){
+                    this.type = true
+                }else{
+                    this.type = false
+                }
+            },
+            change(num){
+                this.changeGray = num
+            }
+        },
+        created(){
+            this.Search()
+        }
+    })
+</script>
+</body>
+<script src="../laydate/laydate.js"></script>
+<script>
+</script>
+<style>
+.movepage{
+    float: right;
+    display: -webkit-inline-box;
+}
+ul,li{
+    margin: 0px;
+    padding: 0px;
+    }
+li{
+    list-style: none
+    }
+.page-bar li:first-child>a {
+    margin-left: 0px
+    }
+.page-bar a{
+    border: 1px solid #ddd;
+    text-decoration: none;
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #000000;
+    cursor: pointer
+    }
+.page-bar a:hover{
+    background-color: #34495e;
+    }
+.page-bar a.banclick{
+    cursor:not-allowed;
+    }
+.page-bar .active a{
+    color: #FFFFFF;
+    cursor: default;
+    background-color: #34495e;
+    border-color: #34495e;
+    }
+.page-bar i{
+    font-style:normal;
+    color: #d44950;
+    margin: 0px 4px;
+    font-size: 12px;
+    }
+</style>
+</html>

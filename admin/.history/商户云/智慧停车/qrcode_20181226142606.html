@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type='text/javascript' src='../js/qrcode.min.js'></script>
+    <script type='text/javascript' src='../js/qrcode.js'></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+   <section id='section'>
+        <div id="qrcode" ref="qrcode"></div>
+   </section>
+<script type="text/javascript">
+new Vue({
+    el: '#section',
+    data(){
+        return{}
+    },
+    mounted(){
+
+QRCode.toDataURL('https://www.baidu.com')
+  .then(url => {
+   var qrbox = document.querySelector("#qrcode");
+   const img = new Image();
+   img.src=url;
+   qrbox.appendChild(img);
+  })
+  .catch(err => {
+    console.error(err)
+  })
+},
+})
+</script>
+</body>
+<style>
+    #canvas{
+    width: 80%!important;
+    height: auto!important;
+  }
+</style>
+</html>

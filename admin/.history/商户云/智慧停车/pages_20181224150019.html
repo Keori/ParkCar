@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<meta charset="utf-8">
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<script type="text/javascript" src="../js/vue.js"></script>
+<style>
+.page-bar{
+  margin:40px;
+}
+ul,li{
+  margin: 0px;
+  padding: 0px;
+}
+li{
+  list-style: none
+}
+.page-bar li:first-child>a {
+  margin-left: 0px
+}
+.page-bar a{
+  border: 1px solid #ddd;
+  text-decoration: none;
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  cursor: pointer
+}
+.page-bar a:hover{
+  background-color: #eee;
+}
+.page-bar a.banclick{
+  cursor:not-allowed;
+}
+.page-bar .active a{
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+.page-bar i{
+  font-style:normal;
+  color: #d44950;
+  margin: 0px 4px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+    <div id='item_list'>
+        <nav v-if="all > 1">
+            <ul class="pagination">
+              <li v-if="showFirst"><a href="javascript:" @click="cur--">«</a></li>
+              <li v-for="index in indexes" :class="{ 'active': cur == index}">
+                <a @click="btnClick(index)" href="javascript:">{{ index }}</a>
+              </li>
+              <li v-if="showLast"><a @click="cur++" href="javascript:">»</a></li>
+              <li><a>共<i>{{all}}</i>页</a></li>
+            </ul>
+          </nav>
+        <pagination :cur="1" :all="pageAll" :page-num="10" @page-to="loadList"></pagination>
+      </div>
+<script type="text/javascript">
+Vue.component('pagination',{
+    template:'#paginationTpl',
+    replace:true,
+    props:['cur','all','pageNum'],
+    methods:{
+      //页码点击事件
+      btnClick: function(index){
+        if(index != this.cur){
+          this.cur = index;
+        }
+      }
+    },
+    watch:{
+      "cur" : function(val,oldVal) {
+        this.$dispatch('page-to', val);
+      }
+    },
+    computed:{
+      indexes : function(){
+        var list = [];
+        //计算左右页码
+        var mid = parseInt(this.pageNum / 2);//中间值
+        var left = Math.max(this.cur - mid,1);
+        var right = Math.max(this.cur + this.pageNum - mid -1,this.pageNum);
+        if (right > this.all ) { right = this.all}
+        while (left <= right){
+          list.push(left);
+          left ++;
+        }
+        return list;
+      },
+      showLast: function(){
+        return this.cur != this.all;
+      },
+      showFirst: function(){
+        return this.cur != 1;
+      }
+    }
+  });
+  var vm = new Vue({
+    el: "#item_list",
+    data: {
+      items : [],
+      //分页参数
+      pageAll:0, //总页数,根据服务端返回total值计算
+      perPage:10 //每页数量
+    },
+    methods: {
+      loadList:function(page){
+        var that = this;
+        $.ajax({
+          url : "/getList",
+          type:"post",
+          data:{"page":page,"perPage":this.perPage},
+          dataType:"json",
+          error:function(){alert('请求列表失败')},
+          success:function(res){
+            if (res.status == 1) {
+              that.items = res.data.list;
+              that.perPage = res.data.perPage;
+              that.pageAll = Math.ceil(res.data.total / that.perPage);//计算总页数
+            }
+          }
+        });
+      },
+      //初始化
+      init:function(){
+        this.loadList(1);
+      }
+    }
+  });
+  vm.init();
+</script>
+</body>
+</html>

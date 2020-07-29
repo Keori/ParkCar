@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>二维码</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/qrcode.css" type="text/css" rel="stylesheet"/>
+<link href="../laydate/laydate.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">二维码</div>
+                        
+        <ul>
+        	<li class="on"><a href="">新建二维码活动</a></li>
+            <li><a href="">二维码活动列表</a></li>
+            <li><a href="">二维码活动统计</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit borderb">
+            新建二维码活动
+        </div>
+
+        <div class="QrcodeAct">
+			<div class="QrcodeItem">
+				<div class="cell name">活动名称 :</div>
+				<div class="cell textIn"><input type="text" placeholder="不超过10个字"/></div>
+				<div class="cell">
+					<em class="ts ts2">
+					    <span class="helpIcon"></span>
+					    <div class="help_show"><b></b>
+					        <p>提示：二维码活动将相关二维码展示在商家签购小票中，帮助商家进行二维码营销。同时段最多支持展示三个，如需了解详情请点
+					        	<a href="javascript:void(0);">帮助</a>
+					        </p>
+					    </div>
+					</em>
+				</div>
+			</div>
+			<div class="QrcodeItem">
+				<div class="cell name">二维码类型 :</div>
+				<div class="cell">
+					<ul class="checkWrap radioWrap">
+					    <li><input name="radio" type="radio" id="coupon" checked /><label for="coupon">优惠券</label></li>
+					    <li><input name="radio" type="radio" id="vipcard" /><label for="vipcard">会员卡</label></li>
+					    <li><input name="radio" type="radio" id="custom" /><label for="custom">自定义内容</label></li>
+					</ul>
+				</div>
+			</div>
+			<div class="QrcodeItem" id="couponTypeCon">
+				<div class="cell name">添加优惠券 :</div>
+				<div class="cell">
+					<!-- <div class="addCoupon">+添加优惠券<div class="coupon-choose"><a href="javascript:ChoseCoupon();">有优惠劵</a><a href="javascript:noHaveCoupon();">没有优惠券</a></div></div> -->
+					<div class="addCoupon"><a href="javascript:ChoseCoupon();">+添加优惠券</a></div>
+					<div class="addEx">如选择多张将随机展示，至多三张</div>
+					<div class="clear"></div>
+					<div class="couList">
+						<ul>
+							<li>全场8.5折扣券<span></span></li>
+							<li>全场8.5折扣券<span></span></li>
+							<li>全场8.5折扣券<span></span></li>
+							<li>全场8.5折扣券<span></span></li>
+							<li>全场8.5折扣券<span></span></li>
+							<li>全场8.5折扣券<span></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="QrcodeItem" id="vipcardTypeCon" style="display: none;">
+				<div class="cell name">添加优惠券 :</div>
+				<div class="cell textIn">
+					<div class="select select-vipcard">
+                    <select id="a" style="display: none" name="a">
+                        <option value="1">选择会员卡</option>
+                        <option value="2">会员卡名称一</option>
+                        <option value="3">会员卡名称二</option>
+                        <option value="4">会员卡名称三</option>
+                    </select>
+                    </div>
+				</div>
+			</div>
+
+			
+			<div class="QrcodeItem" id="customTypeCon" style="display: none;">
+				<div class="cell name">添加优惠券 :</div>
+				<div class="cell">
+					<div class="filePic filePic2"><div class="img" style="display: none"><img src="../images/erweima_s.gif" alt=""/></div><input name="file" type="file" id="filepic"/><label for="filepic"></label></div>
+				</div>
+				<div class="cell"><span class="PicSize">上传建议尺寸：300x300像素</span></div>
+			</div>
+
+			<div class="QrcodeItem">
+				<div class="cell name">活动有效期 :</div>
+				<div class="cell textIn date"><input type="text" placeholder="" onclick="laydate()"/><span class="dateFg">至</span><input type="text" placeholder="" onclick="laydate()"/></div>
+			</div>
+			<div class="QrcodeItem">
+				<div class="cell name">活动说明 :</div>
+				<div class="cell textIn"><input type="text" placeholder="显示在签购小票中，字数不超过30字"/></div>
+			</div>
+			<div class="QrcodeItem">
+				<div class="cell name">适用门店 :</div>
+				<div class="cell">
+					<ul class="checkWrap">
+					    <li><input name="checkbox" type="checkbox" id="store-1" checked /><label for="store-1">门店1</label></li>
+					    <li><input name="checkbox" type="checkbox" id="store-2" /><label for="store-2">门店2</label></li>
+					    <li><input name="checkbox" type="checkbox" id="store-3" /><label for="store-3">门店3</label></li>
+					</ul>
+				</div>
+			</div>
+			<div class="QrcodeItem">
+				<div class="cell name">是否发布 :</div>
+				<div   class="cell">
+					<ul class="checkWrap radioWrap">
+					    <li><input name="release" type="radio" id="yes" checked /><label for="yes">是</label></li>
+					    <li><input name="release" type="radio" id="no" /><label for="no">否</label></li>
+					</ul>
+				</div>
+			</div>
+			<div class="vip_btn QrcodeAct_btn">
+				<div class="btn fabu_btn"><a href="">确定</a></div>
+				<div class="btn gray_btn"><a href="">返回</a></div>
+			</div>
+        </div>
+    </section>
+</section>
+<!-- main end -->
+<script src="../laydate/laydate.js"></script>
+<script src="../layer/layer.js" type="text/javascript"></script>
+<script>
+	$(document).click(function(){
+	    $(".coupon-choose").hide();
+	});
+	$(".addCoupon").click(function(){
+		event.stopPropagation();
+		$(".coupon-choose").show();
+	});
+	 //提示
+    $(".ts2").hover(function(){
+        $(this).find(".help_show").show();
+    },function(){
+        $(this).find(".help_show").hide();
+    });
+	//选择优惠券弹窗
+	function ChoseCoupon (){
+	    layer.open({
+	      type: 2,
+	      title: '选择优惠券',
+	      closeBtn: 1,
+	      shade: 0.8,
+	      skin: 'ChoseVip',
+	      area: ['720px', '520px'],
+	      content: '002选择优惠券-弹窗.html' //iframe的url
+	    }); 
+	};
+	//没有优惠券弹窗
+	function noHaveCoupon (){
+	    layer.open({
+	      type: 2,
+	      title: '选择优惠券',
+	      closeBtn: 1,
+	      shade: 0.8,
+	      skin: 'ChoseVip',
+	      area: ['392px', '242px'],
+	      content: '003没有优惠券-弹窗.html' //iframe的url
+	    }); 
+	};
+	//二维码类型
+	$("#coupon").click(function(){
+		$("#couponTypeCon").show();
+		$("#vipcardTypeCon").hide();
+		$("#customTypeCon").hide();
+	})
+	$("#vipcard").click(function(){
+		$("#couponTypeCon").hide();
+		$("#vipcardTypeCon").show();
+		$("#customTypeCon").hide();
+	})
+	$("#custom").click(function(){
+		$("#couponTypeCon").hide();
+		$("#vipcardTypeCon").hide();
+		$("#customTypeCon").show();
+	})
+</script>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+    $(".select select").selectbox();
+});
+</script>
+</html>
+
+</body>
+</html>

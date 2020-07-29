@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/qrcode.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+    $(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<!-- <div class="wcClose"></div>
+    <div class="layerTit">选择会员卡</div> -->
+    <div class="couponChooseBox">
+        <div class="CommonInput RightCon_first mt20">
+            <ul>
+                <li>
+                    <div class="select select0">
+                    <select id="a" style="display: none" name="a">
+                        <option value="1">选择券类型</option>
+                        <option value="2">代金券</option>
+                        <option value="3">折扣券</option>
+                        <option value="4">买赠券</option>
+                    </select>
+                    </div>
+                </li>
+                <li><input type="text" name="text" placeholder="券名称" /></li>
+                <li><span class="org_btn"><input name="submit" type="submit" value="搜索"/></span></li>
+            </ul>
+        </div>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable">
+            <tr>
+                <th>
+                    <ul class="checkWrap">
+                        <li><input name="checkbox" type="checkbox" id="check-all" checked /><label for="check-all">全选</label></li>
+                    </ul>
+                </th>
+                <th width="150">劵名称</th>
+                <th>券类型</th>
+                <th>生效时间</th>
+                <th>失效时间</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="checkWrap">
+                        <li><input name="checkbox" type="checkbox" id="check-1" checked /><label for="check-1"></label></li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="checkWrap">
+                        <li><input name="checkbox" type="checkbox" id="check-2" checked /><label for="check-2"></label></li>
+                    </ul>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div class="tc_btn"><span class="org_btn"><input name="submit" type="button" value="确定" id="closeIframe" /></span><span class="jb_btn"><input name="reset" type="button" value="取消"/></span></div>
+    </div>
+<!-- main end -->
+</body>
+</html>

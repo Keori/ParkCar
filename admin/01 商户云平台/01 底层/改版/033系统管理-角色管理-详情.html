@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+<title>033系统管理-角色管理-详情</title>
+<link href="../Public/css/2.0/common-2.0.css" rel="stylesheet">
+<link href="../Public/css/2.0/tlinx-2.0.css" rel="stylesheet">
+<script src="../Public/js/2.0/jquery-1.8.0.min.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../Public/js/2.0/html5.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<!-- 顶部区 -->
+<div class="tip_box">
+	<div class="main">
+        <div class="fr user_info">欢迎您，
+            <span class="user"><i class="org">18900000000</i>
+                <div class="show_user">
+                	<b></b>
+                    <img src="../Public/images/card_img2.jpg" alt="" />
+                    <h4 class="blue2">深圳市美达网络技术有限公司罗湖分公司</h4>
+                    <p class="gray">已购应用：<span class="org">45</span></p>
+                    <p class="gray">过期应用：<span class="org">2</span></p>
+                </div>
+            </span>
+            <span class="news"><a href="">消息<b></b></a></span>
+            <span class="exit"><a href="">退出</a></span>
+            <span><a href="">帮助？</a></span>
+            <span class="en"><i>Language 中文</i>
+            	<div class="show_en">
+                	<b></b>
+                    <a href="">English</a>
+                    <a href="">한국어</a>
+                    <a href="">日本語</a>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- 导航区 -->
+<nav>
+	<div class="main">
+    	<div class="fr">
+        	<ul>
+        		<li><a href="">首页</a></li>
+                <li><a href="">我的应用</a></li>
+                <li class="cur"><a href="">我的账户</a></li>
+                <li><a href="">系统管理</a></li>
+                <li><a href="">应用商城</a></li>
+        	</ul>
+        </div>
+        <a href=""><img src="../Public/images/2.0/logo.jpg" alt="" /></a>
+        <span>T-Linx智能云服务平台</span>
+    </div>
+</nav>
+
+<!-- 内容区 -->
+<div class="con_bg clearfix">
+    <div class="main">
+        <menu>
+            <h2>- 系统管理 -</h2>
+            <ul>
+            	<li><a href="">基本信息</a></li>
+                <li class="cur"><a href="">修改密码</a></li>
+                <li><a href="">管理员设置</a></li>
+                <li><a href="">门店设置</a></li>
+                <li><a href="">角色管理</a></li>
+                <li><a href="">转账记录</a></li>
+                <li><a href="">应用购买记录</a></li>
+            </ul>
+        </menu>
+        <div class="content">
+        	<div class="hd">角色详情</div>
+          	<div class="perm_from set_box">
+            	<dl>
+                	<dt>角色名称：</dt>
+                	<dd class="space_dd bottom20">系统管理员</dd>
+            		<dt>角色描述：</dt>
+                    <dd class="space_dd">***********</dd>
+                    <dt>商户云平台权限：</dt>
+            		<dd>
+                    	<div class="perm_line">
+                            <div class="perm_list checkbox clearfix">
+                                <ul>
+                                    <li>登录商户云平台</li>
+                                    <li>修改登录密码</li>
+                                    <li>管理员管理</li>
+                                    <li>门店管理</li>
+                                    <li>修改门店主管密码</li>
+                                    <li>更改手机号</li>
+                                    <li>应用市场</li>
+                                    <li>购买应用</li>
+                                    <li>我的应用</li>
+                                    <li>使用应用</li>
+                                    <li>T账户管理</li>
+                                    <li>数据报表</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>终端权限：</dt>
+            		<dd>
+                    	<div class="perm_line">
+                            <div class="perm_list checkbox clearfix">
+                                <ul>
+                                    <li>登录收银台</li>
+                                    <li>普通收银</li>
+                                    <li>查账（交易订单）</li>
+                                    <li>应用市场</li>
+                                    <li>购买应用</li>
+                                    <li>使用应用</li>
+                                    <li>配置应用</li>
+                                    <li>T账户管理</li>
+                                    <li>修改登录密码</li>
+                                    <li>修改主管密码</li>
+                                    <li>修改终端属性</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>应用权限：</dt>
+            		<dd>
+                    	<div class="perm_list checkbox clearfix">
+                        	<ul>
+                                <li>应用1</li>
+                                <li>应用2</li>
+                                <li>应用3</li>
+                        	</ul>
+                        </div>
+                    </dd>
+            	</dl>
+            </div>
+           <div class="center_block bottom70">
+            <button  class="btn blue_btn">返回</button>
+           </div>
+        </div>
+    </div>
+</div>
+
+<!-- 页脚区 -->
+<footer>
+	<div class="main"><span class="fr"><a href="">关于我们</a>|<a href="">联系我们</a></span>TTG版权所有 粤ICP备14081130号-1 </div>
+</footer>
+
+</body>
+<script src="../Public/js/2.0/tlinx-2.0.js"></script>
+<script src="../Public/js/2.0/icheck.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自定义单选、多选按钮
+	$('.checkbox input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+});
+</script>
+
+
+</html>

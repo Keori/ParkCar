@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+<title>008T账户-账户总览-充值-余额不足（弹窗）</title>
+<link href="../Public/css/2.0/common-2.0.css" rel="stylesheet">
+<link href="../Public/css/2.0/tlinx-2.0.css" rel="stylesheet">
+<script src="../Public/js/2.0/jquery-1.8.0.min.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../Public/js/2.0/html5.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<div class="alert_box w1">
+    <div class="alert_mod">
+    	<div class="pd20 center_block">
+        	<p>Ｔ账户余额不足！</p>
+            <p class="gray2 size_12">选择支付方式可快速购买应用</p>
+            <dl class="top20">
+                <dt>支付方式：</dt>
+                <dd>
+                	<div class="jffs checkbox clearfix">
+                        <ul>
+                            <li class="checkbox_input"><input name="13" type="radio" value="" id="13" checked ><label for="13">支付宝</label></li>
+                            <li class="checkbox_input"><input name="13" type="radio" value="" id="14" ><label for="14">微信</label></li>
+                            <li class="checkbox_input"><input name="13" type="radio" value="" id="15"  ><label for="15">百度钱包</label></li>
+                        </ul>
+                    </div>
+                </dd>
+                <dt>支付金额：</dt>
+                <dd class="text_l">500.00</dd>
+            </dl>
+        </div>
+    </div>
+    <div class="alert_btns">
+    	<button class="btn alert_btn1">确认</button><button class="btn alert_btn2 left20">取消</button>
+    </div>
+</div>
+
+</body>
+<script src="../Public/js/2.0/icheck.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自定义单选、多选按钮
+	$('.checkbox input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+});
+</script>
+
+</html>

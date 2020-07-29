@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type='text/javascript' src='../js/qrcode.min.js'></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+<section id="content" class="content content1170">
+    <div id="qrcode"></div>
+</section>
+<script type="text/javascript">
+new QRCode(document.getElementById("qrcode"), "http://www.runoob.com");
+</script>
+</body>
+<style>
+</style>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+<title>032系统管理-角色管理-新增角色</title>
+<link href="../Public/css/2.0/common-2.0.css" rel="stylesheet">
+<link href="../Public/css/2.0/tlinx-2.0.css" rel="stylesheet">
+<script src="../Public/js/2.0/jquery-1.8.0.min.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../Public/js/2.0/html5.js"></script>
+<![endif]-->
+
+</head>
+<body>
+<!-- 顶部区 -->
+<div class="tip_box">
+	<div class="main">
+        <div class="fr user_info">欢迎您，
+            <span class="user"><i class="org">18900000000</i>
+                <div class="show_user">
+                	<b></b>
+                    <img src="../Public/images/card_img2.jpg" alt="" />
+                    <h4 class="blue2">深圳市美达网络技术有限公司罗湖分公司</h4>
+                    <p class="gray">已购应用：<span class="org">45</span></p>
+                    <p class="gray">过期应用：<span class="org">2</span></p>
+                </div>
+            </span>
+            <span class="news"><a href="">消息<b></b></a></span>
+            <span class="exit"><a href="">退出</a></span>
+            <span><a href="">帮助？</a></span>
+            <span class="en"><i>Language 中文</i>
+            	<div class="show_en">
+                	<b></b>
+                    <a href="">English</a>
+                    <a href="">한국어</a>
+                    <a href="">日本語</a>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+
+<!-- 导航区 -->
+<nav>
+	<div class="main">
+    	<div class="fr">
+        	<ul>
+        		<li><a href="">首页</a></li>
+                <li><a href="">我的应用</a></li>
+                <li class="cur"><a href="">我的账户</a></li>
+                <li><a href="">系统管理</a></li>
+                <li><a href="">应用商城</a></li>
+        	</ul>
+        </div>
+        <a href=""><img src="../Public/images/2.0/logo.jpg" alt="" /></a>
+        <span>T-Linx智能云服务平台</span>
+    </div>
+</nav>
+
+<!-- 内容区 -->
+<div class="con_bg clearfix">
+    <div class="main">
+        <menu>
+            <h2>- 系统管理 -</h2>
+            <ul>
+            	<li><a href="">基本信息</a></li>
+                <li class="cur"><a href="">修改密码</a></li>
+                <li><a href="">管理员设置</a></li>
+                <li><a href="">门店设置</a></li>
+                <li><a href="">角色管理</a></li>
+                <li><a href="">转账记录</a></li>
+                <li><a href="">应用购买记录</a></li>
+            </ul>
+        </menu>
+        <div class="content">
+        	<div class="hd">添加角色</div>
+            <div class="hd_line">基础设置：</div>
+            <div class="base_from">
+            	<dl>
+            		<dt><i class="org">*</i>角色名称：</dt>
+            		<dd><input class="txt" type="text" placeholder="请输入角色名称" /><span>如店长</span></dd>
+                    <dt>角色描述：</dt>
+            		<dd><input class="txt" type="text" placeholder="请输入角色描述" /></dd>
+            	</dl>
+            </div>
+            <div class="hd_line">权限设置：</div>
+          	<div class="perm_from base_from set_box">
+            	<dl>
+            		<dt>商户云平台权限：</dt>
+            		<dd>
+                    	<div class="perm_line">
+                            <div class="perm_list checkbox clearfix">
+                                <ul>
+                                    <li class="checkbox_input"><input name="1" type="checkbox" value="" id="1" checked ><label for="1">登录商户云平台</label></li>
+                                    <li class="checkbox_input"><input name="2" type="checkbox" value="" id="2" checked ><label for="2">修改登录密码</label></li>
+                                    <li class="checkbox_input"><input name="3" type="checkbox" value="" id="3" checked ><label for="3">管理员管理</label></li>
+                                    <li class="checkbox_input"><input name="4" type="checkbox" value="" id="4"  ><label for="4">门店管理</label></li>
+                                    <li class="checkbox_input"><input name="5" type="checkbox" value="" id="5"  ><label for="5">修改门店主管密码</label></li>
+                                    <li class="checkbox_input"><input name="6" type="checkbox" value="" id="6"  ><label for="6">更改手机号</label></li>
+                                    <li class="checkbox_input"><input name="7" type="checkbox" value="" id="7"  ><label for="7">应用市场</label></li>
+                                    <li class="checkbox_input"><input name="8" type="checkbox" value="" id="8"  ><label for="8">购买应用</label></li>
+                                    <li class="checkbox_input"><input name="9" type="checkbox" value="" id="9"  ><label for="9">我的应用</label></li>
+                                    <li class="checkbox_input"><input name="10" type="checkbox" value="" id="10" checked ><label for="10">使用应用</label></li>
+                                    <li class="checkbox_input"><input name="11" type="checkbox" value="" id="11" checked ><label for="11">T账户管理</label></li>
+                                    <li class="checkbox_input"><input name="12" type="checkbox" value="" id="12" checked ><label for="12">数据报表</label></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </dd>
+                    <dt>终端权限：</dt>
+            		<dd>
+                    	<div class="perm_list checkbox clearfix">
+                        	<ul>
+                        		<li class="checkbox_input"><input name="13" type="checkbox" value="" id="13" checked ><label for="13">登录收银台</label></li>
+                                <li class="checkbox_input"><input name="14" type="checkbox" value="" id="14"  ><label for="14">普通收银</label></li>
+                                <li class="checkbox_input"><input name="15" type="checkbox" value="" id="15"  ><label for="15">查账（交易订单）</label></li>
+                                <li class="checkbox_input"><input name="16" type="checkbox" value="" id="16"  ><label for="16">应用市场</label></li>
+                                <li class="checkbox_input"><input name="17" type="checkbox" value="" id="17"  ><label for="17">购买应用</label></li>
+                                <li class="checkbox_input"><input name="18" type="checkbox" value="" id="18" checked ><label for="18">使用应用</label></li>
+                                <li class="checkbox_input"><input name="19" type="checkbox" value="" id="19" checked ><label for="19">配置应用</label></li>
+                                <li class="checkbox_input"><input name="20" type="checkbox" value="" id="20" checked ><label for="20">T账户管理</label></li>
+                                <li class="checkbox_input"><input name="21" type="checkbox" value="" id="21" checked ><label for="21">修改登录密码</label></li>
+                                <li class="checkbox_input"><input name="22" type="checkbox" value="" id="22" checked ><label for="22">修改主管密码</label></li>
+                                <li class="checkbox_input"><input name="23" type="checkbox" value="" id="23" checked ><label for="23">修改终端属性</label></li>
+                        	</ul>
+                        </div>
+                    </dd>
+                    <dt>应用权限：</dt>
+            		<dd>
+                    	<div class="perm_list checkbox clearfix">
+                        	<ul>
+                                <li class="checkbox_input"><input name="24" type="checkbox" value="" id="24" checked ><label for="24">应用1</label></li>
+                                <li class="checkbox_input"><input name="25" type="checkbox" value="" id="25" checked ><label for="25">应用2</label></li>
+                                <li class="checkbox_input"><input name="26" type="checkbox" value="" id="26" checked ><label for="26">应用3</label></li>
+                        	</ul>
+                        </div>
+                    </dd>
+            	</dl>
+            </div>
+            <div class="hd_line">高级设置：</div>
+          	<div class="perm_from  set_box">
+            	<dl>
+                    <dt>角色级别：</dt>
+            		<dd>
+                    	<div class="perm_list checkbox clearfix">
+                        	<ul>
+                                <li class="checkbox_input"><input name="27" type="radio" value="" id="27" checked ><label for="27">普通 V1</label></li>
+                                <li class="checkbox_input"><input name="27" type="radio" value="" id="28"  ><label for="28">管理员 V2</label></li>
+                                <li class="checkbox_input"><input name="27" type="radio" value="" id="29" ><label for="29">老板 V3</label></li>
+                        	</ul>
+                        </div>
+                    </dd>
+            	</dl>
+                <div class="gray2 left110">
+                    <p>提示：</p>
+                    <p>1、角色级别越高，管理员管理权限越高。比如老板角色可管理店长（管理员角色），店长不能管理老板</p>
+                </div>
+            </div>
+           <div class="center_block bottom70">
+            <button  class="btn blue_btn">保存</button><button  class="btn gray_btn2 left50">取消</button>
+           </div>
+        </div>
+    </div>
+</div>
+
+<!-- 页脚区 -->
+<footer>
+	<div class="main"><span class="fr"><a href="">关于我们</a>|<a href="">联系我们</a></span>TTG版权所有 粤ICP备14081130号-1 </div>
+</footer>
+
+</body>
+<script src="../Public/js/2.0/tlinx-2.0.js"></script>
+<script src="../Public/js/2.0/icheck.js"></script>
+<script type="text/javascript">
+$(function(){
+	//自定义单选、多选按钮
+	$('.checkbox input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+});
+</script>
+
+
+</html>

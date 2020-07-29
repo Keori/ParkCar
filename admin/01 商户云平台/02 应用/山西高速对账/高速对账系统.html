@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>高速对账系统</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+
+<!-- 日历插件 -->
+<script src="../laydate/laydate.js"></script>
+<link  href="../laydate/laydate.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">高速对账系统</div>
+                        
+        <ul>
+        	<li class="on"><a href="">报表查询</a></li>
+        	<li><a href="">差异数据</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">高速对账系统</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist">
+                <ul>
+                    <li class="ceat">
+                        <span class="name sel_th">交易时间：</span><input name="text" type="text" style="width:80px" onclick="laydate()"/><span class="mlr5">—</span><input name="text" type="text" style="width:80px" onclick="laydate()"/>
+                    </li>
+                    <li class="ceat"><span class="name sel_th">交易门店：</span><div class="select"><select><option>秋名山站</option><option>张兰站</option><option>平遥站</option><option>分水岭站</option></select></div></li>
+                    <li class="ceat"><span class="name sel_th">收银员：</span><div class="select"><select><option>张三</option><option>李四</option><option>王五</option></select></div></li>
+                </ul>
+                <ul>
+                    <li class="ceat"><span class="name sel_th">交易类型：</span><div class="select"><select><option>微信</option><option>支付宝</option></select></div></li>
+                    <li class="ceat"><span class="name sel_th">交易状态：</span><div class="select"><select><option>成功</option><option>失败</option></select></div></li>
+                    <li class="ceat">
+                        <span class="org_btn" style="margin:-1px 0 0 0; float:left;"><input class="long" type="button" value="查询"></span>
+                    </li>
+                </ul>
+            </div>
+           
+           <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable5 jilu top20 tr_color">
+               <tbody>
+               <tr>
+                   <th>订单编号</th>
+                   <th>交易类型</th>
+                   <th>交易时间</th>
+                   <th>交易金额</th>
+                   <th>车牌</th>
+                   <th>门店</th>
+                   <th>收银员</th>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+               <tr>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+                   <td></td>
+               </tr>
+             </tbody>
+           </table>
+           <div class="bg_f3 page">共 99 项 
+               <div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+           </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+
+<script type="text/javascript" src="../js/calendar3.js"></script>
+<script>
+$(function(){
+	$(".card1,.card2,.card3,.card4,.card5,.card6").click(function(event){
+		var e=window.event || event;
+		  if(e.stopPropagation){
+		   e.stopPropagation();
+		  }else{
+		   e.cancelBubble = true;
+		  }
+		
+		if($(this).next(".show_card").css("display")=="none"){ 
+			$(".show_card").hide(); 
+			$(this).next(".show_card").show();
+		}else{
+			$(this).next(".show_card").hide();
+		};
+
+	});
+	$(".show_card").click(function(event){
+	  var e=window.event || event;
+	  if(e.stopPropagation){
+	   e.stopPropagation();
+	  }else{
+	   e.cancelBubble = true;
+	  }
+	 });
+	 document.onclick = function(){
+	  $(".show_card").hide();
+	 };
+});	
+</script>
+</body>
+</html>

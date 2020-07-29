@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>二维码</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/qrcode.css" type="text/css" rel="stylesheet"/>
+<link href="../laydate/laydate.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">二维码</div>
+                        
+        <ul>
+        	<li class="on"><a href="">新建二维码活动</a></li>
+            <li><a href="">二维码活动列表</a></li>
+            <li><a href="">二维码活动统计</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit borderb">
+            二维码活动统计
+        </div>
+
+        <article class="boxRightCon">
+        	<div class="CommonInput RightCon_first">
+            	<ul>
+                    <li><span class="name">活动名称：</span><input type="text" name="text"/></li>
+					<li><span class="name">二维码类型：</span>
+						<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">全部</option>
+								<option value="2">商家公众号</option>
+								<option value="3">优惠券</option>
+								<option value="4">会员卡</option>
+								<option value="5">自定义内容</option>
+							</select>
+						</div>
+					</li>
+					<li><span class="org_btn"><a href="">搜索</a></span></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable tr_color">
+            <thead>
+            	<tr>
+                    <th>活动名称</th>
+                    <th>二维码类型</th>
+                    <th>适用门店</th>
+                    <th>活动时间</th>
+                    <th>最后扫码时间</th>
+                    <th>小票生成数量</th>
+                    <th>用户扫码次数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>关注公众号</td>
+                    <td>自定义内容</td>
+                    <td>讯美店、科发店、南山店...</td>
+                    <td>2015-09-10—2015-09-10</td>
+                    <td>2017-08-09 15：00：06</td>
+                    <td>10</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>领取15元优惠券</td>
+                    <td>优惠券</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>领取会员卡</td>
+                    <td>会员卡</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            </table>
+            <div class="bg_f3 page">共 99 项 
+                <div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+</html>
+<script src="../laydate/laydate.js"></script>
+<script src="../layer/layer.js" type="text/javascript"></script>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+    $(".select select").selectbox();
+});
+</script>
+</body>
+</html>

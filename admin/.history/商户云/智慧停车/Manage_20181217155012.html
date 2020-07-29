@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" href="../css/jquery.jqplot.min.css"> -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="../mock/mock.js"></script> -->
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <!--[if IE]>
+    <script type="text/javascript" src="../js/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('*'); </script>
+    <![endif]-->
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li><a href="ParkComputed.html">停车统计</a></li>
+            <li><a href="">车牌管理</a></li>
+            <li class="on"><a href="">营销管理</a></li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">营销管理</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist viplist_formlist_1">
+                <ul>
+                    <li>
+                        <div class="org_btn"><a class='search'>添加模板</a></div>
+                    </li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+                <tr>
+                    <th>模板编号</th>
+                    <th>模板名称</th>
+                    <th>模板类型</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                    <th>创建人</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                <!-- <tr v-for='item in wordT'>
+                    <td>{{item.ModuleCode}}</td>
+                    <td>中秋好礼</td>
+                    <td class='ModuleType'></td>
+                    <td>启用中</td>
+                    <td>{{item.CreateTime}}</td>
+                    <td>{{item.CreatePerson}}</td>
+                    <td>{{item.ReMark}}</td>
+                    <td class="red"><a href="ManageChild.html">查看并编辑</a><a href="javascript:">修改状态</a></td>
+                </tr> -->
+                <tr>
+                    <th class='ModuleCode'></th> <!-- 模板编号 -->
+                    <th class='ModuleName'></th> <!-- 模板名称 -->
+                    <th class='ModuleType'></th> <!-- 模板类型 -->
+                    <th class='state'></th> <!-- 状态 -->
+                    <th class='CreateTime'></th> <!-- 创建时间 -->
+                    <th class='CreatePerson'></th> <!-- 创建人 -->
+                    <th class='reMark'></th> <!-- 备注 -->
+                    <td class="red"><a href="ManageChild.html">查看并编辑</a><a href='javascript:;'>修改状态</a></td>
+                </tr>
+            </table>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<!-- <script type="text/javascript">
+    new Vue({
+        el: '.commonTable',
+        data(){
+            return{
+                wordT:[{
+                    ModuleCode: '',
+                    ModuleName: '中秋好礼',
+                    ModuleType: '',
+                    State: '',
+                    CreateTime: '',
+                    CreatePerson: '',
+                    ReMark: '',
+                    Handle: ''
+                },{
+                    ModuleCode: '',
+                    ModuleName: '中秋好礼',
+                    ModuleType: '',
+                    State: '',
+                    CreateTime: '',
+                    CreatePerson: '',
+                    ReMark: '',
+                    Handle: ''
+                },{
+                    ModuleCode: '',
+                    ModuleName: '中秋好礼',
+                    ModuleType: '',
+                    State: '',
+                    CreateTime: '',
+                    CreatePerson: '',
+                    ReMark: '',
+                    Handle: ''
+                }]
+            }
+        },
+        created(){
+            let data = Mock.mock({
+            'list|3': [{
+                'ModuleCode|+1' : 1,
+                'ModuleName' : '@cname(4)',
+                'CreateTime' : '@date(yyyy-MM-dd)',
+                'CreatePerson' : '@cname(3)',
+                'ReMark' : '@cname(13)',
+                'Handle' : '修改状态'
+                }]
+            });
+        console.log(JSON.stringify(data, null, 4));
+        console.log(data)
+        this.wordT = data.list
+        }
+    });
+    function getQueryString(name){
+        let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+        let r = window.location.search.substr(1).match(reg);
+        if(r !=null) return unescape(r[2]);
+        return null;
+    }
+    $('.ModuleType').text(getQueryString('value'))
+</script> -->
+<script type='text/javascript'>
+let add = {
+    templateName: $('.ModuleName').val(), //模板名称
+    templateId: $('.ModuleType').val(), //模板类型
+    templateStatus: $('.state').val(), //状态
+    createTime: $('.CreateTime').val(), //创建时间
+    createBy: $('.CreatePerson').val(), //创建人
+    note: $('.reMark').val() //备注
+}
+$.ajax({
+    url:'http://park.ardy0220.top:9999/merchant/Advertisement/list',
+    type:'get',
+    data:{
+        /*暂时缺少[ID:广告模板id];[tempCategoryCode:广告模板类型代码];
+        //[templateNo:广告模板代码];[templateUrl:广告模板url];
+        //[templateStatus:广告模板图片];[tempCatugoryDesc:广告模板类型名称];
+        //[lastUpdatedBy:广告最后更新人];[lastUpdatedTime:广告最后更新时间]*/
+        // 模板编号【原型】 : $('.ModuleCode').val(),
+        templateName: $('.ModuleName').val(), //模板名称
+        templateId: $('.ModuleType').val(), //模板类型
+        templateStatus: $('.state').val(), //状态
+        createTime: $('.CreateTime').val(), //创建时间
+        createBy: $('.CreatePerson').val(), //创建人
+        note: $('.reMark').val() //备注
+    }
+})
+$('.search').click(function(){
+        $.ajax({
+        url:'http://park.ardy0220.top:9999/merchant/Advertisement/add',
+        type:'post',
+        headers:{"Content-Type":"application/json;charset=UTF-8"},
+        data: JSON.stringify(add),
+    })
+})
+</script>
+</body>
+<style>
+</style>
+</html>

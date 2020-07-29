@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>生成二维码</title>
+<script src="../js/jquery-3.1.1.min.js"></script>
+<script src="../js/qrcode.js"></script>
+<style>
+body{
+text-align: center;
+}
+#qrcode{
+margin:100px auto;
+}
+#text{
+width: 200px;height: 100px;
+border:1px solid #ccc;
+}
+#codeImg {
+width: 300px;
+height: 300px;
+margin:0 auto;
+}
+</style>
+</head>
+<body>
+<input type="text" id="text" placeholder="请输入要生成二维码的文本">
+<input type="button" id="create" value="生成二维码">
+<br>
+<div id="qrcode"></div>
+<div id="codeImg">
+<img src="" alt="" />
+</div>
+<script type="text/javascript">
+$('#create').click(function(){
+$('#qrcode').html('').qrcode({
+text: $('#text').val()
+});
+
+// canvas转换成图片
+var codeImg = $('#qrcode').find('canvas')[0].toDataURL("image/png");
+$("#codeImg img").attr("src",codeImg);
+
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>05设备管理</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<script type="text/javascript" src="../js/icheck.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".select select").selectbox();
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+});
+</script>
+</head>
+
+<body>
+<!-- header start -->
+<header class="header">
+    <div class="top w1000">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1000">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">微信公众平台</div>
+        <ul>
+        	<li class="on"><a href="">设备管理</a></li>
+            <li><a href="">页面内容管理</a></li>
+            <li><a href="">数据统计</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">我的设备</div>
+        <article class="boxRightCon">
+        	<div class="CommonInput RightCon_first">
+				<ul>
+					<li><span class="name">设备名称：</span><input name="text" style="width:190px" placeholder="输入设备名称/设备ID" type="text"/></li>	
+					<li><span class="name">状态：</span>
+						<div class="select select2">
+							<select id="a" style="display: none" name="a">
+								<option value="1">全部</option>
+								<option value="2">11</option>
+								<option value="3">222</option>
+							</select>
+						</div>
+					</li>
+					<li class="org_btn"><input name="submit" type="submit" value="搜索"/></li>
+				</ul>
+			</div>
+            <p class="gray">设备是指支持“iBeacon协议”的低功耗蓝牙硬件。</p>
+            <p class="fr"><a href="" class="org">下载未激活设备配置信息</a><span class="org_btn"><a class=" left10" href="">+新增设备</a></span></p>
+            <p><span class="gray">设备新增后请在6个月内激活，否则系统将会自动回收</span> <a class="org" href="">设备配置指引？如何激活设备？</a></p>
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable  tr_color top20">
+            <thead>
+				<tr>
+					<th>设备名称</th>
+					<th>设备ID</th>
+					<th>所在门店</th>
+					<th>状态</th>
+                    <th>配置页面数</th>
+                    <th>上面摇周边时间</th>
+					<th>操作</th>
+				</tr>
+            </thead>
+            <tbody>
+				<tr>
+					<td>设备名称设备名称</td>
+					<td>SD100</td>
+					<td>深圳软件园</td>
+					<td>已激活</td>
+                    <td>5</td>
+                    <td>2015-07-22 15:12:12</td>
+					<td><a class="green" href="">编辑</a></td>
+				</tr>
+                <tr>
+					<td>设备名称设备名称</td>
+					<td>SD100</td>
+					<td>深圳软件园</td>
+					<td>未激活</td>
+                    <td>5</td>
+                    <td>2015-07-22 15:12:12</td>
+					<td><a class="green" href="">查看</a><a class="green left10" href="">下载设备信息</a><a class="green left10" href="">删除</a></td>
+				</tr>
+                <tr>
+					<td>设备名称设备名称</td>
+					<td>SD100</td>
+					<td>深圳软件园</td>
+					<td>已激活</td>
+                    <td>5</td>
+                    <td>2015-07-22 15:12:12</td>
+					<td><a class="green" href="">编辑</a></td>
+				</tr>
+                <tr>
+					<td>设备名称设备名称</td>
+					<td>SD100</td>
+					<td>深圳软件园</td>
+					<td>未激活</td>
+                    <td>5</td>
+                    <td>2015-07-22 15:12:12</td>
+					<td><a class="green" href="">查看</a><a class="green left10" href="">下载设备信息</a><a class="green left10" href="">删除</a></td>
+				</tr>
+                <tr>
+					<td>设备名称设备名称</td>
+					<td>SD100</td>
+					<td>深圳软件园</td>
+					<td>已激活</td>
+                    <td>5</td>
+                    <td>2015-07-22 15:12:12</td>
+					<td><a class="green" href="">编辑</a></td>
+				</tr>
+                <tr>
+					<td>设备名称设备名称</td>
+					<td>SD100</td>
+					<td>深圳软件园</td>
+					<td>未激活</td>
+                    <td>5</td>
+                    <td>2015-07-22 15:12:12</td>
+					<td><a class="green" href="">查看</a><a class="green left10" href="">下载设备信息</a><a class="green left10" href="">删除</a></td>
+				</tr>
+			</tbody>
+			</table>
+			<div class="page page2">共 99 项 
+            	<div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+
+</html>

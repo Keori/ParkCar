@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/taojinbi.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+<!-- header start -->
+<header class="header">
+    <div class="top w1000">
+       <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+       <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+    	<div class="w1000">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<!-- header end -->
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">淘金币活动</div>
+        <ul>
+        	<li class="on"><a href="">创建活动</a></li>
+            <li><a href="">活动列表</a></li>
+            <li><a href="">兑换记录</a></li>
+            <li><a href="">推广连接列表</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">创建活动</div>
+        <article class="boxRightCon">
+			<div class="cj_hd CommonInput">
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd>
+						<div class="f2 menutable">+关联优惠券</div>
+						<table width="678" cellpadding="0" cellspacing="0" border="0" class="taojinbi_table mt10">
+							<tr>
+								<th>券名称</th>
+								<th>券分类</th>
+								<th>券类型</th>
+								<th>券有效期</th>
+								<th>券状态</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td>唐宫15元代金券</td>
+								<td>电子优惠券</td>
+								<td>代金券</td>
+								<td>2015.12.02-2015.12.05</td>
+								<td>已审核</td>
+								<td class="menutable"><a href="">删除</a></td>
+							</tr>
+						</table>
+					</dd>
+				</dl>
+				<dl>
+					<dt>活动名称：</dt>
+					<dd><input name="text" type="text" value="如：10淘金币兑换50元代金券" onFocus="if(value=='如：10淘金币兑换50元代金券'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='如：10淘金币兑换50元代金券'}" size="50"/></dd>
+				</dl>
+				<dl>
+					<dt>活动有效期：</dt>
+					<dd><input name="text" type="text" value="时间精确到天" onFocus="if(value=='时间精确到天'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='时间精确到天'}" size="22"/> — <input name="text" type="text" value="" size="21"/><span class="f12_c3 mlr5">（“淘金币兑换优惠券活动”的有效期）</span></dd>
+				</dl>
+				<dl>
+					<dt>兑换需消耗淘金币：</dt>
+					<dd><span class="tjb_num"><a href="">50</a><a href="">100</a><a href="" class="on">150</a><a href="">200</a><a href="">500</a><a href="">1000</a></span><span class="f12_c3 mlr5">（请选择一个数值，表明兑换该优惠活动需消耗的淘金币数量）</span></dd>
+				</dl>
+				<dl>
+					<dt>活动总数量：</dt>
+					<dd><input name="text" type="text" value="填写数字" onFocus="if(value=='填写数字'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='填写数字'}" size="22"/><span class="f12_c3 mlr5">（不填表示不限总量）</span></dd>
+				</dl>
+				<dl>
+					<dt>说明：</dt>
+					<dd class="textarea"><textarea></textarea></dd>
+				</dl>
+				<dl>
+					<dt>&nbsp;</dt>
+					<dd>
+						<div class="vip_btn">
+							<div class="btn fabu_btn">
+								<a href="">保存</a>
+							</div>
+							<div class="btn save_btn">
+								<a href="">保存并发布</a>
+							</div>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			<div class="wxts">
+				温馨提示：
+				<p>1.创建淘金币活动时，需要在“优惠券”应用中先创建一张优惠券<br/>2.关联优惠券时，请关联券状态为“已审核”的优惠券</p>
+			</div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+<!-- footer start -->
+<footer class="footer">
+	<div class="w1000">
+    	<p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+    	<p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+    </div>
+</footer>
+<!-- footer end -->
+</body>
+</html>

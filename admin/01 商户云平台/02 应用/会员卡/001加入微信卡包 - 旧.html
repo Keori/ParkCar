@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">会员卡</div>
+                        
+        <ul>
+        	<li class="on">
+                <a href="">会员卡管理</a>
+                <ul>
+                    <li class="on"><a href="">我的会员卡</a></li>
+                    <li><a href="">积分礼品管理</a></li>
+                    <li><a href="">历史会员卡</a></li>
+                </ul>
+            </li>
+            <li><a href="">推广链接列表</a></li>
+            <li><a href="">会员列表</a></li>
+            <li><a href="">交易消费明细</a></li>
+            <li><a href="">导入会员</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit borderb">
+            加入微信卡包
+        </div>
+    	<div class="joinCard">
+        
+            <div class="joinWechat CommonInput">
+                <div class="formItem">
+                    <div class="formName">APP_ID：</div>
+                    <div class="formInlineBlock">
+                        <input name="text" type="text"/>
+                    </div>
+                    <div class="sm">说明：代表发该会员卡的公众号APP_ID</div>
+                    <div class="sm ts explain_ts"><span class="blue">公众号要求与配置说明</span>
+                        <div class="help_show"><b></b>
+                            <p>
+                            1、公众号要求是已认证的。<br/>
+                            2、公众号需要已经开通微信公众号会员卡功能模块。<br/>
+                            3、登录微信公众平台，配置公众号参数：打开菜单 ”基本配置 “-- > “修改配置” 。参数配置如下：<br/>
+                            <strong>URL(服务器地址) http://wxapi.tlinx.com/WxServlet.do<br/>
+                            Token(令牌) 9F684A04<br/>
+                            EncodingAESKey(消息加解密密钥) <br/>mTrJTj6vAyZ65gMD2AlNJ2qUT29qHfz7VSVDLJVuHwp</strong><br/>
+                            4、登录微信公众平台，配置公众号参数：打开菜单 ”基本配置 “-- > “IP白名单，配置” 。<br/><strong>添加  120.76.232.99 到IP白名单。</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="formName">APP_SECRET：</div>
+                    <div class="formInlineBlock">
+                        <input name="text" type="text"/>
+                    </div>
+                    <div class="sm">说明：代表发该会员卡的公众号APP_SECRET</div>
+                </div>
+                <div class="formItem">
+                    <div class="formName">会员卡：</div>
+                    <div class="selectionDisplay">请选择会员卡</div>
+                    <div class="jb_btn formInlineBlock"><a href="javascript:ChoseVip();">编辑</a></div>
+                </div>
+            </div>
+            <div class="pageConfig CommonInput">
+                <h3 class="itemTit borderb">页面配置<span class="org_btn"><a href="">页面预览</a></span></h3>
+
+                <div class="formItem">
+                    <div class="formName">卡背景方式：</div>
+                    <div class="formInlineBlock">
+                        <ul class="checkWrap" id="sendTypeTit">
+                            <li><input name="sendType" type="radio" id="sendType1" checked /><label for="sendType1">图片</label></li>
+                            <li><input name="sendType" type="radio" id="sendType2"/><label for="sendType2">颜色</label></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <section id="sendType1Con">
+                    <div class="formItem borderb">
+                        <div class="formName">卡背景图片：</div>
+                        <div class="selectionDisplay">请上传图片</div>
+                        <div class="formInlineBlock jb_btn filePic"><input name="file" type="file" id="filepic"/><label for="filepic">选择图片</label></div>
+                        <div class="sm sm3">尺寸1000×600像素，图片大小小于1M，格式可为jpg、png、jpeg<br/>说明：此处是微信卡包背景图片的标准。请选择设计一致的背景图片</div>
+                    </div>
+                </section>
+                <section id="sendType2Con" style="display: none;"> 
+                    <div class="formItem borderb">
+                        <div class="formName">卡颜色：</div>
+                        <ul class="colorFulChose">
+                            <li class="color1"></li>
+                            <li class="color2"></li>
+                            <li class="color3 cur"></li>
+                            <li class="color4"></li>
+                            <li class="color5"></li>
+                            <li class="color6"></li>
+                            <li class="color7"></li>
+                            <li class="color8"></li>
+                            <li class="color9"></li>
+                            <li class="color10"></li>
+                        </ul>
+                    </div>
+                </section>
+                <div class="formItem borderb">
+                    <div class="itemTitSmall">展示位</div>
+                    <div class="formName">内容选择：</div>
+                    <div class="formInlineBlock">
+                        <ul class="checkWrap">
+                            <li><input name="checkbox" type="checkbox" id="yu_e"/><label for="yu_e">余额</label></li>
+                            <li><input name="checkbox" type="checkbox" id="ji_fen"/><label for="ji_fen">积分</label></li>
+                            <li><input name="checkbox" type="checkbox" id="zhe_kou"/><label for="zhe_kou">折扣</label></li>
+                            <li><input name="checkbox" type="checkbox" id="deng_ji"/><label for="deng_ji">等级</label></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="formItem borderb">
+                    <div class="itemTitSmall">中间按钮</div>
+                    <div class="customInBox">
+                        <div class="formName">自定义名称：</div>
+                        <div class="formInlineBlock">
+                            <input name="text" type="text"/>
+                        </div>
+                        <div class="sm">规则：请输入4个文字。</div>
+                        <div class="clear"></div>
+                        <div class="formName">自定义链接：</div>
+                        <div class="formInlineBlock">
+                            <textarea></textarea>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="formName">引导提示语：</div>
+                        <div class="formInlineBlock">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="formItem borderb">
+                    <div class="itemTitSmall">自定义入口1</div>
+                    <div class="customInBox">
+                        <div class="formName">自定义名称：</div>
+                        <div class="formInlineBlock">
+                            <input name="text" type="text"/>
+                        </div>
+                        <div class="sm">规则：请输入4个文字。</div>
+                        <div class="clear"></div>
+                        <div class="formName">自定义链接：</div>
+                        <div class="formInlineBlock">
+                            <textarea></textarea>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="formName">右侧提示语：</div>
+                        <div class="formInlineBlock">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="formItem">
+                    <div class="itemTitSmall">自定义入口2</div>
+                    <div class="customInBox">
+                        <div class="formName">自定义名称：</div>
+                        <div class="formInlineBlock">
+                            <input name="text" type="text"/>
+                        </div>
+                        <div class="sm">规则：请输入4个文字。</div>
+                        <div class="clear"></div>
+                        <div class="formName">自定义链接：</div>
+                        <div class="formInlineBlock">
+                            <textarea></textarea>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="formName">右侧提示语：</div>
+                        <div class="formInlineBlock">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="preview">
+                <div class="sm sm4">说明：蓝色位置可在左侧配置。</div>
+                <div class="viewImgBox">
+                	<img src="../images/previewPic.jpg" alt=""/>
+                </div>
+            </div>
+    	</div>
+        <div class="vip_btn joinCardBtn center">
+            <div class="btn fabu_btn"><a href="">确定</a></div>
+            <div class="btn gray_btn"><a href="">返回</a></div>
+        </div>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script src="../layer/layer.js" type="text/javascript"></script>
+<script type=text/javascript>
+//选择会员卡弹窗
+function ChoseVip (){
+    layer.open({
+      type: 2,
+      title: '选择会员卡',
+      closeBtn: 1,
+      shade: 0.8,
+      skin: 'ChoseVip',
+      area: ['720px', '520px'],
+      content: '002选择会员卡.html' //iframe的url
+    }); 
+}
+//下拉框select
+$(document).ready(function() {
+	$(".select select").selectbox();
+    $("#sendTypeTit input").change(function(){
+        if($(this).attr("id")=='sendType1'){
+            $("#sendType1Con").show().siblings("section").hide();
+        }else{
+            $("#sendType2Con").show().siblings("section").hide();
+        }
+    })
+
+    //提示
+    $(".ts").hover(function(){
+        $(this).find(".help_show").show();
+    },function(){
+        $(this).find(".help_show").hide();
+    });
+});
+</script>
+</html>

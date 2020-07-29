@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+    <script type='text/javascript' src='../js/qrcode.min.js'></script>
+    <script type='text/javascript' src='../js/qrcode.js'></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+   <section id='section'>
+        <div id="code"></div>
+        <img id="img"/>
+   </section>
+<script type="text/javascript">
+ var qrcode=$("#code").qrcode({
+    render:'canvas||table',
+    width: 200, //宽度
+    height:200, //高度
+    text: "http://www.baidu.com" //任意内容
+  }).hide();
+  var canvas=qrcode.find('canvas').get(0);
+  //如果有循环,此句必不可少 qrcode.find('canvas').remove();
+  var data = canvas.toDataURL('image/jpg');
+  $('#img').attr('src',data) ;
+  saveFile(data,"fd范德萨范德萨");
+  //转为图片的方法,需要上门的data
+  function saveFile(data,filename){
+    var save_link=document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+    save_link.href=data;
+    save_link.download=filename;
+    var event=document.createEvent('MouseEvents');
+    event.initMouseEvent('click',true,false,window,0,0,0,0,0,false,false,false,false,0,null);
+    save_link.dispatchEvent(event);
+  };
+</script>
+</body>
+<style>
+</style>
+</html>

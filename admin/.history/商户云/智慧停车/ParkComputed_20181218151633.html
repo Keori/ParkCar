@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <link href="../laydate/laydate.css" type="text/css" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" href="../css/jquery.jqplot.min.css"> -->
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/Main.js"></script> -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <!-- <script type="text/javascript" src="../mock/mock.js"></script> -->
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <!--[if IE]>
+    <script type="text/javascript" src="../js/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript" src="../js/vue.min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('*'); </script>
+    <![endif]-->
+    <!-- <script src="../js/jQselect.js" type="text/javascript"></script> -->
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li class="on"><a href="">停车统计</a></li>
+            <li><a href="">车牌管理</a></li>
+            <li><a href="Manage.html">营销管理</a></li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">停车统计</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist viplist_formlist_1">
+                <ul>
+                    <li>
+                        <span class="name">支付时间：</span><input onclick="laydate()" name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <span class="name">至</span><input onclick="laydate()" name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <span class="name parkNo">车牌：</span><input name="text" type="text" style="width:100px;"/>
+                    </li>
+                    <li>
+                        <div class="org_btn"><a class='Seach'>查询</a></div>
+                    </li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+                <tr>
+                    <th>序号</th>
+                    <th>车牌号</th>
+                    <th>OpenID</th>
+                    <th>昵称</th>
+                    <th>入场时间</th>
+                    <th>出场时间</th>
+                    <th>停车时间</th>
+                    <th>停车费</th>
+                    <th>实收金额</th>
+                    <th>支付时间</th>
+                </tr>
+                <tr v-for='item in Park'>
+                    <td>{{item.NO}}</td>
+                    <td>{{item.PlateNumbers}}</td>
+                    <td>{{item.OpenID}}</td>
+                    <td>{{item.NickName}}</td>
+                    <td>{{item.EntryTime}}</td>
+                    <td>{{item.MINminutes}}</td>
+                    <td>{{item.StoppingTime}}</td>
+                    <td>{{item.StoppingMoney}}</td>
+                    <td class="red">{{item.OfficialMoney}}</td>
+                    <td>{{item.PayTime}}</td>
+                </tr>
+            </table>
+            <div class="bg_f3 page">共 110 条数据
+                <div class="page_right fr"><a href="">首页</a><a href="">上一页</a><a href="">1</a><a href="">2</a><a href="">3</a><a href="">4</a><a href="">5</a><a href="">下一页</a><a href="">末页</a></div>
+            </div>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<script  type="text/javascript">
+// import { paylist } from '../api/data'
+    new Vue({
+        el: '#content',
+        data(){
+            return{
+                Park:[]
+            }
+        },
+        methods:{
+        },
+        created(){
+            let params = {}
+                $.ajax({
+                url: 'http://park.ardy0220.top:9999/merchant/car/paylist',
+                type: 'get',
+                contentType: 'application/json;charset=uft-8',
+                data: params,
+                statusCode:{
+                    404:function(){
+                        alert('您的网不行')
+                    }
+                },
+                success:function(params){
+                    this.Park = params.data
+                    console.log(data)
+                }
+            })
+        }
+    })
+</script>
+
+<!-- <script type="text/javascript">
+$(function(){
+    let parking = {
+        // 序号【原型】 : $('.No').val(),
+        plateId: $('.parkNo').val(), //车牌号
+        openId: $('.OpenId').val(), //OpenID
+        nickName: $('.NickName').val(), //昵称
+        entryTime: $('.Entrytime').val(), //入场时间
+        // payTime : $('支付时间【接口】').val(), //原型上暂时没有
+        // 出场时间【原型】 : $('.MINminutes').val(), //暂无接口
+        elapsedTime : $('.stoppingTime').val(), //停车(留)时间
+        payable : $('.stoppingMoney').val(), //停车费(支付金额)
+        // 实收金额【原型】 : $('.TheSumReceived').val(), //暂无接口
+        payTime: $('.PayTime').val() //支付时间
+    }
+    $('.Seach').click(function(){
+        window.location.href = 'JavaScript:;'
+        $.ajax({
+            url: 'http://park.ardy0220.top:9999/merchant/car/paylist',
+            type: 'get',
+            data: parking,
+            contentType: 'application/json;charset=uft-8',
+            dataType: 'json',
+            statusCode:{
+                404:function(){
+                    alert('您的网不行')
+                }
+            },
+            success:function(data){
+                $('.parkNo').load(data.page.list);
+                // $('.OpenId').load(data.page.list);
+                // $('.NickName').load(data.page.list);
+                // $('.EntryTime').load(data.page.list);
+                // $('stoppingTime').load(data.page.list);
+                // $('.stoppingMoney').load(data.page.list);
+                // $('.PayTime').load(data.page.list)
+
+        //         let val = data,
+        //         for(let i=0; i<obj.length; i++){
+        //         row.find('.parkNo').text(val[i].plateId);
+        //         row.find('.OpenId').text(val[i].openId);
+        //         row.find('.NickName').text(val[i].nickName);
+        //         row.find('.EntryTime').text(val[i].entryTime);
+        //         row.find('stoppingTime').text(val[i].elapsedTime);
+        //         row.find('.stoppingMoney').text(val[i].payable);
+        //         row.fing('.PayTime').text(val[i].payTime)
+        // }
+            }
+        })
+    })
+})
+</script> -->
+
+</body>
+<script src="../laydate/laydate.js"></script>
+</html>

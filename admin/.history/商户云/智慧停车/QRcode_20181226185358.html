@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type='text/javascript' src='../js/qrcode.min.js'></script>
+    <!-- <script type="text/javascript" src="../js/vue.js"></script> -->
+</head>
+<body>
+<section id="content" class="content content1170">
+    <input id="text" type="text" value="http://www.runoob.com" /><br />
+    <div id="qrcode"></div>
+</section>
+<script type="text/javascript">
+var qrcode = new QRCode("qrcode");
+
+function makeCode () {      
+    var elText = document.getElementById("text");
+    
+    if (!elText.value) {
+        alert("Input a text");
+        elText.focus();
+        return;
+    }
+    
+    qrcode.makeCode(elText.value);
+}
+
+makeCode();
+
+$("#text").
+on("blur", function () {
+    makeCode();
+}).
+on("keydown", function (e) {
+    if (e.keyCode == 13) {
+        makeCode();
+    }
+});
+</script>
+</body>
+<style>
+#qrcode {
+    width:160px;
+    height:160px;
+    margin-top:15px;
+}
+</style>
+</html>

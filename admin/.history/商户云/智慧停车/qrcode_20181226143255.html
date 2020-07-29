@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type='text/javascript' src='../js/qrcode.min.js'></script>
+    <script type='text/javascript' src='../js/qrcode.js'></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+   <section id='section'>
+        <div id="qrcode">二维码生成的位置</div> 
+   </section>
+<script type="text/javascript">
+var QRCode = require('qrcode')
+var canvas = ''
+new Vue({
+    el: '#section',
+    data(){
+        return{ bannerUrl: ''}
+    },
+    methods: {
+    createQrc: function () {
+      if (!this.bannerUrl) {
+        window.alert('链接不能为空')
+        return false
+      }
+      QRCode.toCanvas(canvas, this.bannerUrl, (error) => {
+        if (error) {
+          console.log(error)
+        } else {
+          console.log('success')
+        }
+      })
+    }
+    },
+    mounted () {
+    this.$nextTick(function () {
+      // DOM操作
+      canvas = document.getElementById('qrccode-canvas')
+    })
+  }
+})
+  methods: {  
+      qrcode () {  
+          let qrcode = new QRCode('qrcode', {  
+          width: 100,  
+          height: 100, // 高度  [图片上传失败...(image-9ad77b-1525851843730)]
+          text: '588888888' // 二维码内容  
+          // render: 'canvas' // 设置渲染方式（有两种方式 table和canvas，默认是canvas）  
+          // background: '#f0f'  
+           // foreground: '#ff0'  
+      })  
+          console.log(qrcode)  
+    }  
+  }, 
+  mounted () {  //调用
+    this.qrcode()  
+  }
+</script>
+</body>
+<style>
+.btn-wrap {
+  width: 260px;
+  height: 260px;
+  margin: 0 auto;
+}
+.btn-wrap textarea{
+  width: 260px;
+  height: 260px;
+}
+</style>
+</html>

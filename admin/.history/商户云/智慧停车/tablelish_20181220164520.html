@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section id='sections'>
+        <table>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>NickName</th>
+                <th>How</th>
+                <th>Nationality</th>
+                <th>County</th>
+            </tr>
+            <tr v-for='(item,index) in items' :key='index'>
+                <td>{{item.No}}</td>
+                <td>{{item.Name}}</td>
+                <td>{{item.NickName}}</td>
+                <td>{{item.How}}</td>
+                <td>{{item.Nationality}}</td>
+                <td>{{item.County}}</td>
+            </tr>
+        </table>
+    </section>
+</body>
+<script type='text/javascript'>
+new Vue({
+    el: '#sections',
+    data(){
+        return{
+            items:[
+                {
+                    No: 1,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 2,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 3,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 4,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 5,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 6,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 7,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+                {
+                    No: 8,
+                    Name: 'Jack',
+                    NickName: 'Audolu',
+                    How: 'NoP',
+                    Nationality: 'Aou',
+                    County: 'Drem'
+                },
+            ]
+        }
+    }
+})
+</script>
+</html>

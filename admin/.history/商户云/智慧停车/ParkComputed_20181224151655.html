@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/myCss.css">
+</head>
+<body>
+<!--在JavaScript中dt和dd，如果dd有两行就导致dt和dd不在同一行-->
+<div class="wrap" id="test">
+    <ul>
+        <li data-id="a">
+        <span>家用电器</span>
+        </li>
+        <li data-id="b">
+        <span>手机/运营商/数码</span>
+        </li>
+        <li>
+        <span data-id="c">电脑/办公</span>
+        </li>
+        <li  data-id="d">
+        <span>家居/家具/家装/厨具</span>
+        </li>
+        <li data-id="e">
+        <span>男装/女装/童装/内衣</span>
+        </li>
+        <li data-id="f">
+        <span>美妆/个护清洁/宠物</span>
+        </li>
+        <li data-id="g">
+        <span>女鞋/箱包/钟表/珠宝</span>
+        </li>
+        <li data-id="h">
+        <span>男鞋/运动/户外</span>
+        </li>
+        <li data-id="i">
+        <span>房产/汽车/汽车用品</span>
+        </li>
+        <li data-id="j">
+        <span>母婴/玩具乐器</span>
+        </li>
+        <li data-id="k">
+        <span>食品/酒类/生鲜/特产</span>
+        </li>
+        <li data-id="l">
+        <span>艺术/礼品鲜花/农资绿植</span>
+        </li>
+        <li data-id="m">
+        <span>医药保健/计生情趣</span>
+        </li>
+        <li data-id="n">
+        <span>图书/音像/电子书</span>
+        </li>
+        <li data-id="o">
+        <span>机票/酒店/旅游/生活</span>
+        </li>
+        <li data-id="p">
+        <span>理财/众筹/白条/保险</span>
+        </li>
+        <li data-id="q">
+        <span>安装/维修/清洁保养</span>
+        </li>
+    </ul>
+    <!-- 二级标题-->
+    <div id="sub" class="none">
+        <div id="a" class="sub_content none">
+        <dl>
+            <dt>
+            <a href="#">电视<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">曲面电视</a>
+            <a href="#">超薄电视</a>
+            <a href="#">HDR电视</a>
+            <a href="#">OLED电视</a>
+            <a href="#">4k超清电视</a>
+            <a href="#">人工智能电视</a>
+            <a href="#">55英寸</a>
+            <a href="#">65英寸</a>
+            <a href="#">电视配件</a>
+            </dd>
+            <dt>
+            <a href="#">空调<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">壁挂式空调</a>
+            <a href="#">柜式空调</a>
+            <a href="#">中央空调</a>
+            <a href="#">一级能效空调</a>
+            <a href="#">变频空调</a>
+            <a href="#">1.5匹空调</a>
+            <a href="#">单冷空调</a>
+            <a href="#">以旧换新</a>
+            </dd>
+            <dt>
+            <a href="#">洗衣机<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">滚筒洗衣机</a>
+            <a href="#">洗烘一体机</a>
+            <a href="#">波轮洗衣机</a>
+            <a href="#">迷你洗衣机</a>
+            <a href="#">烘干机</a>
+            <a href="#">洗衣机配件</a>
+            </dd>
+            <dt>
+            <a href="#">冰箱<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">多门</a>
+            <a href="#">对开门</a>
+            <a href="#">三门</a>
+            <a href="#">双门</a>
+            <a href="#">冷柜/冰吧</a>
+            <a href="#">酒柜</a>
+            <a href="#">冰箱配件</a>
+            </dd>
+            <dt>
+            <a href="#">厨卫大电<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">油烟机</a>
+            <a href="#">燃气灶</a>
+            <a href="#">烟灶套装</a>
+            <a href="#">集成灶</a>
+            <a href="#">消毒柜</a>
+            <a href="#">洗碗机</a>
+            <a href="#">电热水器</a>
+            <a href="#">嵌入式厨电</a>
+            <a href="#">商用厨房电器</a>
+            </dd>
+            <dt>
+            <a href="#">厨房小电<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">破壁机</a>
+            <a href="#">电烤箱</a>
+            <a href="#">电饭煲</a>
+            <a href="#">咖啡机</a>
+            <a href="#">豆浆机</a>
+            <a href="#">料理机</a>
+            <a href="#">电炖锅</a>
+            <a href="#">电饼铛</a>
+            <a href="#">多用途锅</a>
+            <a href="#">电水壶/热水瓶</a>
+            <a href="#">微波炉</a>
+            <a href="#">榨汁机/原汁机</a>
+            <a href="#">养生壶</a>
+            <a href="#">电磁炉</a>
+            <a href="#">面包机</a>
+            <a href="#">空气炸锅</a>
+            <a href="#">面条机</a>
+            <a href="#">电陶炉</a>
+            <a href="#">煮蛋器</a>
+            </dd>
+            <dt>
+            <a href="#">生活电器<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">吸尘器/除螨仪</a>
+            <a href="#">空气净化器</a>
+            <a href="#">电风扇</a>
+            <a href="#">扫地机器人</a>
+            <a href="#">蒸汽拖把/拖地机</a>
+            <a href="#">干衣机</a>
+            <a href="#">电话机</a>
+            <a href="#">饮水机</a>
+            <a href="#">净水器</a>
+            <a href="#">除湿器</a>
+            <a href="#">挂烫机/熨斗</a>
+            <a href="#">加湿器</a>
+            <a href="#">冷风扇</a>
+            <a href="#">毛球修剪器</a>
+            <a href="#">生活电器配件</a>
+            </dd>
+            <dt>
+            <a href="#">个护健康<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">剃须刀</a>
+            <a href="#">电动牙刷</a>
+            <a href="#">电吹风</a>
+            <a href="#">按摩器</a>
+            <a href="#">健康称</a>
+            <a href="#">卷/直发器</a>
+            <a href="#">剃/脱毛器</a>
+            <a href="#">理发器</a>
+            <a href="#">足浴盆</a>
+            <a href="#">足疗机</a>
+            <a href="#">美容器</a>
+            <a href="#">洁面仪</a>
+            <a href="#">按摩椅</a>
+            </dd>
+            <dt>
+            <a href="#">家庭影音<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">家庭影院</a>
+            <a href="#">KTV音响</a>
+            <a href="#">迷你音响</a>
+            <a href="#">DVD</a>
+            <a href="#">功放</a>
+            <a href="#">回音壁</a>
+            <a href="#">影音配件</a>
+            </dd>
+            <dt>
+            <a href="#">进口电器<i>&gt;</i></a>
+            </dt>
+            <dd>
+            <a href="#">进口电器</a>
+            </dd>
+        </dl>
+    </div>
+    </div>
+</div>
+<script src="js/jquery-3.2.0.min.js"></script>
+<script src="js/myjavascript.js"></script>
+</body>
+</html>

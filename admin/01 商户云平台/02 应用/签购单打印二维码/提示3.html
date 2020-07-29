@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/icheck.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script type=text/javascript>
+$(document).ready(function() {
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+});
+</script>
+</head>
+
+<body>
+	<div class="tc_box tc_box_3">
+		<div class="CommonInput RightCon_first">
+			<ul>
+				<li><span class="name">活动类型</span><input type="text" name="text"></li>
+				<li><span class="name">活动名称</span><input type="text" name="text"></li>
+				<li class="org_btn" style="position:relative"><input name="submit" type="submit" value="搜索"></li>
+			</ul>
+			<span class="tc_close"></span>
+		</div>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable2 skin-minimal">
+			<tr>
+				<th></th>
+				<th>活动类型</th>
+				<th>活动名称</th>
+				<th>优惠类型</th>
+				<th>积分类型</th>
+				<th>积分数额</th>
+				<th>有效期</th>
+				<th>商户渠道</th>
+				<th>状态</th>
+			</tr>
+			<tr>
+				<td><input type="radio" id="minimal-radio-2" name="minimal-radio" checked /></td>
+				<td>红包</td>
+				<td>竹子林扫码送100U积分</td>
+				<td> </td>
+				<td>U联积分</td>
+				<td>100</td>
+				<td>2014-05-01-2016-05-31</td>
+				<td>淘淘谷</td>
+				<td class="red">未上架</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="minimal-radio-2" name="minimal-radio" checked /></td>
+				<td>优惠券</td>
+				<td>竹子林扫码送100U积分</td>
+				<td>折扣券</td>
+				<td></td>
+				<td></td>
+				<td>2014-05-01-2016-05-31</td>
+				<td>淘淘谷</td>
+				<td>已上架</td>
+			</tr>
+			<tr>
+				<td><input type="radio" id="minimal-radio-2" name="minimal-radio" checked /></td>
+				<td>优惠券</td>
+				<td>竹子林扫码送100U积分</td>
+				<td>代金券</td>
+				<td></td>
+				<td></td>
+				<td>2014-05-01-2016-05-31</td>
+				<td>淘淘谷</td>
+				<td>已上架</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

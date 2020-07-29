@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">会员卡</div>
+                        
+        <ul>
+        	<li class="on">
+                <a href="">会员卡管理</a>
+                <ul>
+                    <li class="on"><a href="">我的会员卡</a></li>
+                    <li><a href="">积分礼品管理</a></li>
+                    <li><a href="">历史会员卡</a></li>
+                </ul>
+            </li>
+            <li><a href="">推广链接列表</a></li>
+            <li><a href="">会员列表</a></li>
+            <li><a href="">交易消费明细</a></li>
+            <li><a href="">导入会员</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">
+        	<div class="select select7 fr">
+            <select>
+                <option value="1">门店</option>
+                <option value="1">门店</option>
+            </select>
+            </div>
+            会员卡
+        </div>
+        <article class="boxRightCon">
+        	<dl class="vipcard clearfix">
+            	<dt><span class="yfb"></span>
+                	<h1>XXX会员卡 </h1>
+                    <div class="num">NO.0000001 </div>
+					<div class="pic"><img src="../images/zfb_ico.png" alt=""/><span></span></div>
+                </dt>
+                <dd class="w_auto">
+                	<ul>
+                    	<li class="f2">会员卡名称：<span class="org">TTG</span></li>
+                        <li class="f2 font14">会员卡发卡数：<span>200张</span></li>
+                        <li class="f2 font14">会员卡	领取数：<span>0张</span></li>
+                        <li class="f2 font14">会员卡类型：<span class="color9">储值型</span></li>
+                    </ul>
+                </dd>
+                <div class="card_btn fr left20"><a href="">编辑</a><a href="">下线</a><a href="">发布</a>
+                <a href="">微信卡包配置</a>
+                <a href="">领卡二维码</a>
+                <em class="ts">
+                    <a href="javascript:;"></a>
+                    <div class="help_show"><b></b>
+                        <p>
+                        选择一张会员卡，该会员卡的配置需要满足以下要求。<br/>
+                        ▪ 会员卡名称，字数不超过9个汉字。<br/>
+                        ▪ 商户名称，字数不超过12个汉字<br/>
+                        ▪ 使用说明，字数不超过16个汉字。<br/>
+                        ▪ 特权设置与特权介绍的字数和，字数不超过1024个汉字。
+                        </p>
+                    </div>
+                </em>
+                </div>
+                <div class="erweima_s fr"><span class="blue"><a href="">添加推广链接</a></span><span class="blue"><a href="">编辑积分礼品</a></span><span class="blue"><a href="">添加特殊、节假日优惠</a></span></div>
+                
+            </dl>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+</body>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+
+    //提示
+    $(".ts").hover(function(){
+        $(this).find(".help_show").show();
+    },function(){
+        $(this).find(".help_show").hide();
+    });
+});
+</script>
+</html>

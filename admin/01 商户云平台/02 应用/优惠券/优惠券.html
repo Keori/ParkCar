@@ -1,0 +1,377 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<link href="../css/orange.css" type="text/css" rel="stylesheet"/>
+<link href="../css/theme.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<script type="text/javascript" src="../js/icheck.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script type="text/javascript">
+   $(document).ready(function(){
+	  $('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox_minimal-orange',
+	    radioClass: 'iradio_minimal-orange',
+		increaseArea: '20%'
+	  });
+	  
+	});
+</script>
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">优惠券</div>
+        <ul>
+        	<li class="on"><a href="">创建优惠券</a></li>
+            <li><a href="">优惠券列表</a></li>
+            <li><a href="">领券记录</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">创建优惠券<input name="" class="btn right" type="button" value="新增活动优惠券"></div>
+        <article class="boxRightCon">
+        	<section class="iphone5" id="iphone5">
+				<div class="yulan_box">
+					<!--预览内容 start-->
+					<section class="phone-cont">
+					  <header class="mheader-a"> <a class="mhead_return" href="javascript:void(0);"><i class="mhead_re_ico"></i>返回</a>
+						<h2 class="bt">TRUE</h2>
+						<a href="javascript:;">
+						<div class="phone-icon user"></div>
+						</a> </header>
+					  <section class="details_con pb_40">
+						<div class="banner"><img src="../images/yulan/banner.jpg" alt=""/></div>
+						<div class="mstoretit clearfix">
+							<div class="org">百通国际影城全单9折</div>
+							<div class="gray_date">有效期：2014.02.02-26.02</div>
+						</div>
+						<div class="gray_date mstorehead">商家信息<span class="green ty">10店通用</span></div>
+						<article class="mform minformation">
+							<ul>
+								<li><span class="phone-icon name_icon"></span><div class="con"><p>百川国际影城</p></div></li>
+								<li><span class="phone-icon address_icon"></span><div class="con"><p>深圳市南山区南山路南山欢乐颂5楼</p></div></li>
+								<li><span class="phone-icon tel_icon"></span><div class="con"><p><a href="">0755-02144645</a></p></div></li>
+							</ul>
+						</article>
+						<div class="gray_date mstorehead">使用说明</div>
+						<article class="user_vote">
+							<ul>
+								<li>该券优惠总数量200张</li>
+								<li>最低消费不限制</li>
+								<li>允许使用借记卡</li>
+								<li>所有银行卡都可用</li>
+								<li>限每周一的 16：00-20：00使用</li>
+								<li>每人每天最多使用2张</li>
+								<li>可与其他优惠券共用</li>
+							</ul>
+						</article>
+						<div class="gray_date mstorehead center">提示：领取后，消费时请出示凭证码即可享优惠</div>
+						<div class="borderbox common_btn orgbtn fixedbtn"><a href="">点击领取</a></div>
+					  </section>
+					</section>
+            		<div class="vote red">注：此效果图仅供参考</div>
+					<div class="vip_btn">
+                    	<span class="btn fabu_btn"><input name="submit" type="button" value="预览"></span>
+					</div>
+					<!--预览内容 end-->
+				</div>
+            </section>
+            <section class="VipCont clearfix">
+            	<div class="f1">基础设置</div>
+                <div class="VipConUl CommonInput borderb">
+                	<ul class="coupon">
+                    	<li class="skin-minimal">
+							<span class="name"><span class="red">*</span>发券方式：</span>
+							<input type="radio" id="minimal-check-1" name="minimal-checkbox" checked />
+                            <label for="minimal-check-1">电子优惠券</label>
+							<input type="radio" id="minimal-check-2" name="minimal-checkbox" />
+							<label for="minimal-check-2">银行卡优惠券</label>
+							<span class="help_icon2"><img src="../images/help.png" alt=""/></span>
+							<div class="type_vote type_vote2">
+								<span class="jt jt4"></span>
+								<p>电子优惠券：<br/>商家发放后，用户在手机端获取到凭证码，到店消费时出示凭证码，即可享受相应优惠</p>
+								<p>银行卡优惠券：<br/>商家发放后，用户在手机端将券放入银行卡，到店消费时刷该银行卡即可享受优惠</p>
+							</div>
+
+						</li>
+						<li>
+							<span class="name"><span class="red">*</span>券类型：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">代金券</option>
+								<option value="2">代金券</option>
+							</select>
+							</div>
+						</li>
+						<li>
+							<span class="name"><span class="red">*</span>券名称：</span>
+							<input name="text" type="text" value="如：小肥羊15元代金券" onFocus="if(value=='如：小肥羊15元代金券'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='如：小肥羊15元代金券'}"/><span class="f12_c6 mlr5">（名称规则：店名+优惠内容）</span>
+						</li>
+						<li class="zs">
+							<span class="name"><span class="red">*</span>券面额： </span>
+							<input name="text" type="text" value="整数" onFocus="if(value=='整数'){this.style.color='#333';value=''}" onBlur="if(value==''){this.style.color='#999';value='整数'}"/><span class="mlr5">元</span><span class="f12_c6">（付款时，该券可替代的现金数额）</span>
+						</li>
+						<li class="yxq">
+							<span class="name"><span class="red">*</span>券有效期：</span>
+							<input name="text" type="text" /><span class="mlr5">—</span><input name="text" type="text" />
+						</li>
+						<li style="z-index:103">
+							<span class="name"><span class="red">*</span>发券总量：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">限制总量</option>
+								<option value="2">限制总量</option>
+							</select>
+							</div>
+							<div class="xzzl leftLinone">
+							<input name="text" type="text" /><span class="mlr5">张</span><span class="f12_c6">（当实际发放的优惠券数量达到该总量，不再发放）</span>
+							</div>
+						</li>
+						<li class="zs" style="z-index:102">
+							<span class="name"><span class="red">*</span>最低消费：</span>
+							
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">指定消费金额</option>
+								<option value="2">指定消费金额</option>
+							</select>
+							</div>
+							<div class="leftLinone">
+							最低消费<span class="mlr5"><input name="text" type="text" /></span>元，才可用此券
+							</div>
+						</li>
+						<li style="z-index:100">
+							<span class="name"><span class="red">*</span>使用卡种：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">信用卡</option>
+								<option value="2">信用卡</option>
+							</select>
+							</div>
+							<div class="f12_c6 leftnone">
+							“使用银行卡”和“支持银行”两个选项只在设置银行卡优惠券时使用
+							</div>
+						</li>
+						<li style="z-index:99">
+							<span class="name"><span class="red">*</span>支持银行：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">指定银行</option>
+								<option value="2">指定银行</option>
+							</select>
+							</div>
+							<div class="select selectauto">
+							<select id="a" style="display: none" name="a">
+								<option value="1">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+								<option value="2">中国工商银行</option>
+							</select>
+							</div>
+						</li>
+						<li class="kymd" style="z-index:98">
+							<span class="name"><span class="red">*</span>可用门店/终端：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">指定门店/终端</option>
+								<option value="2">指定门店/终端</option>
+							</select>
+							</div>
+							
+						</li>
+                        <li class="kymd" style="z-index:98">
+							<span class="name"><span class="red">*</span>适用门店：</span>
+							<div class="check_list">
+                            	<ul>
+                                	<li class="skin-minimal">
+                                        <input type="checkbox" id="11" name="minimal-checkbox"/>
+                                        <label for="11">淘淘谷（讯美店）</label>
+                            		</li>
+                                    <li class="skin-minimal">
+                                        <input type="checkbox" id="22" name="minimal-checkbox"/>
+                                        <label for="22">淘淘谷（讯美店）</label>
+                            		</li>
+                                    <li class="skin-minimal">
+                                        <input type="checkbox" id="33" name="minimal-checkbox"/>
+                                        <label for="33">淘淘谷（讯美店）</label>
+                            		</li>
+                                </ul>
+                            </div>
+							
+						</li>
+						<li style="z-index:97"><span class="org"><a href="">+选择门店/终端</a></span>
+							<div class="wei_choose wei_choose2">
+								<dl>
+									<dt><label for="minimal-check-1">竹子林3号店</label></dt>
+									<dd><ul><li><label for="minimal-check-2">1235556</label></li><li><label for="minimal-check-2">1235556</label></li><li><label for="minimal-check-2">1235556</label></li><li><label for="minimal-check-2">1235556</label></li></ul></dd>
+									<dt><label for="minimal-check-3">竹子林3号店</label></dt>
+									<dd><ul><li><label for="minimal-check-4">1235556</label></li></ul></dd>
+									<dt><label for="minimal-check-5">竹子林3号店</label></dt>
+									<dd><ul><li><label for="minimal-check-6">1235556</label></li></ul></dd>
+								</dl>
+							</div>
+						</li>
+						<li><span class="name">说明：</span>
+							<div class="border_a4 leftLinone sm">
+								<textarea>简要介绍优惠券使用限制，适用门店等情况，200字以内
+例如：店内提供免费Wifi 可以打包，打包费咨询商家
+可叠加使用 不兑现，不找零 无需预约，用餐高峰期可能需排队。</textarea>
+							</div>
+						</li>
+						<li>
+							<div class="border_a4 zs_pic">
+								<dl>
+									<dt>
+										<div class="photo"></div>
+									</dt>
+									
+									<dd>
+									此图片是优惠券前端页面的展示图片，大小不要超过5M
+									<div class="org_btn"><a href="">上传图片</a></div>
+									</dd>
+								</dl>
+							</div>
+						</li>
+                    </ul>
+                </div>
+                <div class="f1 skin-minimal"><input type="checkbox" id="minimal-check-1" name="minimal-checkbox" checked /><span  class="mlr5">高级设置</span></div>
+				<div class="VipConUl CommonInput">
+					<ul class="coupon coupon2">
+						<li style="z-index:99999">
+							<span class="name"><span class="red">*</span>使用时间：</span>
+							<div class="select">
+							<select id="a" name="a" style="z-index:999">
+								<option value="1">每天</option>
+								<option value="2">每周</option>
+							</select>
+							</div>
+							<div class="leftLinone mt10">
+								<input name="text" type="text" style="width:86px" placeholder="选择开始时间" /><span class="mlr5">—</span><input name="text" type="text" style="width:86px" placeholder="选择结束时间" /><span class="f12_c6">（设置每天可供使用的时间段，不填表示不限时间）</span>
+							</div>
+							<div class="leftLinone chooseTime mt10">
+								<a href="">全选</a><a href="" class="on">周一</a><a href="">周二</a><a href="" class="on">周三</a><a href="" class="on">周四</a><a href="">周五</a><a href="" class="on">周六</a><a href="">周日</a>
+								<div class="f12_c6 mt10">（设置每天可供使用的时间段，不填表示不限时间）</div>
+								<p class="mt10">周一：<input name="text" type="text" style="width:86px" /><span class="mlr5">—</span><input name="text" type="text" style="width:86px" /></p>
+								<p class="mt10">周三：<input name="text" type="text" style="width:86px" /><span class="mlr5">—</span><input name="text" type="text" style="width:86px" /></p>
+								<p class="mt10">周四：<input name="text" type="text" style="width:86px" /><span class="mlr5">—</span><input name="text" type="text" style="width:86px" /></p>
+								<p class="mt10">周六：<input name="text" type="text" style="width:86px" /><span class="mlr5">—</span><input name="text" type="text" style="width:86px" /></p>
+							</div>
+						</li>
+						
+						<li>
+							<span class="name"><span class="red">*</span>用户使用限制：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">有效期内</option>
+								<option value="2">有效期内</option>
+							</select>
+							</div>
+							<div class="leftLinone xzzl">
+								可使用<span class="mlr5"><input name="text" type="text"/></span>张
+							</div>
+						</li>
+						<li>
+							<span class="name"><span class="red">*</span>分店使用限制：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">按分店限制</option>
+								<option value="2">按分店限制</option>
+							</select>
+							</div>
+						</li>
+						<li class="fdxz">
+							<table width="100%" cellpadding="0" cellspacing="0" class="commonTable">
+								<tr>
+									<th width="20%">分店名</th>
+									<th width="18%">使用终端</th>
+									<th>每分店最大优惠总量</th>
+									<th>每用户在每分店最大优惠总量</th>
+								</tr>
+								<tr>
+									<td rowspan="3">竹子林1分店</td>
+									<td>7527827272</td>
+									<td><input name="text" type="text"/><span class="mlr5">张</span></td>
+									<td><input name="text" type="text"/><span class="mlr5">张</span></td>
+								</tr>
+								<tr>
+									<td>7527827272</td>
+									<td><input name="text" type="text"/><span class="mlr5">张</span></td>
+									<td><input name="text" type="text"/><span class="mlr5">张</span></td>
+								</tr>
+								<tr>
+									<td>7527827272</td>
+									<td><input name="text" type="text"/><span class="mlr5">张</span></td>
+									<td><input name="text" type="text"/><span class="mlr5">张</span></td>
+								</tr>
+							</table>
+						</li>
+						<li class="optiondiv">
+							<span class="fl"><span class="red">*</span>是否与其他优惠共享：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">a</option>
+								<option value="2">b</option>
+								<option value="3">bc</option>
+							</select>
+							</div>
+						</li>
+						<li class="optiondiv">
+							<span class="fl"><span class="red">*</span>是否放入微信卡券包：</span>
+							<div class="select">
+							<select id="a" style="display: none" name="a">
+								<option value="1">不放入</option>
+								<option value="2">放入公众号a</option>
+								<option value="3">放入公众号b</option>
+							</select>
+							</div>
+							<span class="help_icon"><a href="javascript:void(0);"><img src="../images/help.png" alt=""/></a></span>
+						</li>
+						<li class="leftLinone ts">
+							<span class="fl">温馨提示：</span>该优惠券仅代表商户意愿，若出现任何可能的纠纷，请联系商户协商解决，与TTG无关。
+						</li>
+						<li>
+							<div class="error"><span><img src="../images/error.gif">错误提示！</span></div>
+                            <div class="vip_btn">
+                            	<span class="btn gray_btn"><input name="submit" type="button" value="保存"></span>
+                            	<span class="btn fabu_btn"><input name="submit" type="button" value="发布"></span>
+                            </div>
+						</li>
+					</ul>
+				</div>
+            </section>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+
+</body>
+</html>

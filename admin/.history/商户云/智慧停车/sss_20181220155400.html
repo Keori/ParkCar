@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+        <table v-show="show" class="table table-striped table-bordered table-hover " :data="searched_list">
+                <thead>
+                <tr>
+                <th v-for="(table,index) in query_list_header" :key="index">{{table.title}}</th>
+                </tr>
+                </thead>
+                <tbody id="table-body">
+                <tr v-for="(items,index) of searched_list" :key="index" v-show="index <10">
+                <td v-for="item of items">{{item}}</td>
+                <td>
+                    <router-link to="showInfo">详情信息</router-link>
+                </td>
+                </tr>
+            </tbody>
+</body>
+<script>
+    f_page_count(pno){
+    console.log(pno);
+let startRow = (pno - 1)*10 + 1;
+let endRow = (pno * 10);
+let self = this;
+this.$post_with_data('/api/event/list',this.query_params).then(function (d) {
+        if (d.status === 'ok') {
+        self.count = d.result.recordsNum;
+        }
+});
+let num = this.searched_list.length;
+endRow = (endRow > num ? num:endRow);
+$('#table-body tr').hide();
+for (let i = startRow-1;i < endRow;i++){
+    $('#table-body tr').eq(i).show();
+    }
+    this.current = pno;
+    }
+export default({
+    el: '',
+    computed: {
+    searched_list: function () {
+    let arrList = [];//存放数据
+    let list = this.searched_data;
+    for (let i = 0; i < list.length; i++) {
+    if (list[i].uuid.search(this.query_params.search_uuid) != -1 && list[i].user_id.search(this.query_params.search_userid) != -1
+    && list[i].ip.search(this.query_params.search_ip) != -1 && list[i].order_id.search(this.query_params.search_orderid) != -1) {
+    arrList.push(list[i]);
+    }
+    }
+    return arrList;
+    }
+}
+})
+</script>
+</html>

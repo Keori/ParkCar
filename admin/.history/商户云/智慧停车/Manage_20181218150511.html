@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,width=device-width" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <title>会员卡</title>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+    <link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" href="../css/jquery.jqplot.min.css"> -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <!-- <script type="text/javascript" src="../mock/mock.js"></script> -->
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <!--[if IE]>
+    <script type="text/javascript" src="../js/html5.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('*'); </script>
+    <![endif]-->
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+<header class="header index_header">
+    <div class="top w1170">
+        <div class="logo"><i></i><img src="../images/logo.jpg" alt=""/></div>
+        <div class="top_right">欢迎您，TTG商户服务! <span class="icon out_icon"><a href="">退出<code></code></a></span><span class="icon help_icon"><a href="">帮助<code></code></a></span></div>
+    </div>
+
+    <menu class="menu">
+        <div class="w1170">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">应用商城</a></li>
+                <li class="on"><a href="">我的应用</a></li>
+                <li><a href="">系统管理</a></li>
+            </ul>
+        </div>
+    </menu>
+</header>
+<section id="content" class="content content1170">
+    <aside class="left_con">
+        <div class="left_con_tit borderb">智慧停车</div>
+
+        <ul>
+            <li><a href="ParkComputed.html">停车统计</a></li>
+            <li><a href="">车牌管理</a></li>
+            <li class="on"><a href="">营销管理</a></li>
+            <li><a href="Basic.html">基本配置</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+        <div class="boxRight_tit f1 borderb">营销管理</div>
+        <article class="boxRightCon">
+            <div class="CommonInput viplist_formlist viplist_formlist_1">
+                <ul>
+                    <li>
+                        <div class="org_btn"><a class='addModule'>添加模板</a></div>
+                    </li>
+                </ul>
+            </div>
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" class="commonTable commonTable4">
+                <tr>
+                    <th>模板编号</th>
+                    <th>模板名称</th>
+                    <th>模板类型</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                    <th>创建人</th>
+                    <th>备注</th>
+                    <th>操作</th>
+                </tr>
+                <tr v-for='item in Manage'>
+                    <td>{{item.ModuleCode}}</td>
+                    <td>{{item.templateName}}</td>
+                    <td>{{item.tempCategoryDesc}}</td>
+                    <td>{{item.templateStatus}}</td>
+                    <td>{{item.createTime}}</td>
+                    <td>{{item.createBy}}</td>
+                    <td>{{item.note}}</td>
+                    <td class="red"><a href="ManageChild.html">查看并编辑</a><a href="javascript:">修改状态</a></td>
+                </tr>
+            </table>
+        </article>
+    </section>
+    <footer class="footer">
+        <div class="w1000">
+            <p class="footer_a fl">TTG版权所有   粤ICP备07046169号-9</p>
+            <p class="footer_b fr"><a href="">关于我们</a>|<a href="">联系我们</a></p>
+        </div>
+    </footer>
+</section>
+<script type="text/javascript">
+new Vue({
+    el: '#content',
+    data(){
+        return{
+            Manage:[]
+            // {
+            //         // "id": "string", 暂无
+            //         // "templateId": "string", 暂无
+            //         // "tempCategoryCode": "string", 暂无
+            //         // "templateNo": "string", 暂无
+            //         ModuleCode: '',
+            //         templateName: '',
+            //         // "templateUrl": "string", 暂无
+            //         // "templateImg": "string", 暂无
+            //         templateStatus: '',
+            //         tempCategoryDesc: '',
+            //         createTime: '',
+            //         createBy: '',
+            //         note: '',
+            //         // "lastUpdatedBy": 0, 暂无
+            //         // "lastUpdatedTime": "2018-12-18T04:03:40.161Z" 暂无
+            //     }
+        }
+    },
+    created(){
+    let params = {}
+        $.ajax({
+            url: 'http://park.ardy0220.top:9999/merchant/Advertisement/list',
+            type: 'get',
+            data: params,
+        statusCode: {
+            404:function(){
+                alert('你的网不行!') //报错提示
+            }
+        },
+            success:function(params){   //(data,textStatus)
+                this.Manage = params.data
+                console.log(this.Manage)
+            }
+        })
+    }
+});
+// function getQueryString(name){
+//     let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+//     let r = window.location.search.substr(1).match(reg);
+//     if(r !=null) return unescape(r[2]);
+//     return null;
+// }
+// class='ModuleType'
+// $('.ModuleType').text(getQueryString('value'))
+</script>
+
+<!-- <script type='text/javascript'>
+$(function(){
+    let SEMManage = {
+    /*暂时缺少
+    [ID:广告模板id];
+    [tempCategoryCode:广告模板类型代码];
+    [templateNo:广告模板代码];
+    [templateUrl:广告模板url];
+    [templateStatus:广告模板图片];
+    [tempCatugoryDesc:广告模板类型名称];
+    [lastUpdatedBy:广告最后更新人];
+    [lastUpdatedTime:广告最后更新时间]*/
+    // 模板编号【原型】 : $('.ModuleCode').val(),
+    templateName: $('.ModuleName').val(), //模板名称
+    templateId: $('.ModuleType').val(), //模板类型
+    templateStatus: $('.state').val(), //状态
+    createTime: $('.CreateTime').val(), //创建时间
+    createBy: $('.CreatePerson').val(), //创建人
+    note: $('.reMark').val() //备注
+    }
+$('.ChangeStatus').click(function(){
+    $.ajax({
+    url: 'http://park.ardy0220.top:9999/merchant/Advertisement/list',
+    type: 'get',
+    data: SEMManage,
+    statusCode: {
+        404:function(){
+            alert('你的网不行!') //报错提示
+        }
+    },
+    success:function(data){   //(data,textStatus)
+        window.location.href = 'ManageChild.html'
+    }
+})
+    })
+    $('.addModule').click(function(){
+        window.location.href = 'ManageChild.html'
+    })
+})
+</script> -->
+</body>
+<style>
+</style>
+</html>

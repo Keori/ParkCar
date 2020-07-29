@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0,width=device-width" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<title>会员卡</title>
+<link href="../css/reset.css" type="text/css" rel="stylesheet"/>
+<link href="../css/layout.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../js/Main.js"></script>
+<!--[if IE]>
+<script type="text/javascript" src="../js/html5.js"></script>
+<![endif]-->
+<!--[if IE 6]> 
+<script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript">DD_belatedPNG.fix('*'); </script> 
+<![endif]-->
+<script src="../js/jQselect.js" type="text/javascript"></script>
+<script type=text/javascript>
+$(document).ready(function() {
+	$(".select select").selectbox();
+});
+</script>
+</head>
+
+<body>
+
+
+<!-- main start -->
+<section id="content" class="content">
+	<aside class="left_con">
+    	<div class="left_con_tit borderb">会员卡</div>
+                        
+        <ul>
+        	<li class="on"><a href="">会员卡管理</a></li>
+        	<li><a href="">推广渠道管理</a></li>
+            <li><a href="">客户查询</a></li>
+            <li><a href="">帮助</a></li>
+        </ul>
+    </aside>
+    <section id="boxRight" class="boxRight">
+    	<div class="boxRight_tit f1 borderb">会员信息编辑</div>
+        <article class="boxRightCon">
+        	<div class="editcard_list borderb">
+				<div class="f2">基本信息</div>
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" class="CommonInput">
+					<tr>
+						<td width="10%" class="name">手机号：</td>
+						<td width="20%" class="gray">13800000000</td>
+						<td width="10%" class="name">会员等级：</td>
+						<td width="20%" class="gray">普通会员</td>
+                        <td width="12%" class="name">累计消费金额：</td>
+						<td width="20%" class="gray">518.00</td>
+					</tr>
+				</table>
+			</div>
+        	<div class="editcard_list">
+				<div class="editcard_headimg">
+					<div class="tximg"><span>头像</span></div>
+					<div class="fileline editcard_fileline">
+						<label for="unload" onMouseOver="document.getElementById('upload').style.display='block';" class="file1">上传头像</label>
+						<input type="file" onChange="document.getElementById('viewfile').value=this.value;this.style.display='none';" class="file" id="upload" value="" />
+					</div>
+				</div>
+				<div class="f2">补充信息</div>
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="CommonInput">
+					<tr>
+						<td class="name" width="110">姓名：</td>
+						<td width="270"><input name="text" type="text" value="张三" onBlur="if(value==''){this.style.color='#999';value='张三'}" onFocus="if(value=='张三'){this.style.color='#333';value=''}"/></td>
+						<td class="name" width="80">性别：</td>
+						<td>
+							<div class="select selectC">
+								<select>
+									<option>先生</option>
+									<option>女士</option>
+								</select>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="name">原卡号：</td>
+						<td><input name="text" type="text" value="12345678901" onBlur="if(value==''){this.style.color='#999';value='12345678901'}" onFocus="if(value=='12345678901'){this.style.color='#333';value=''}"/></td>
+						<td class="name">领卡时间：</td>
+						<td><input name="text" type="text" value="12345678901" onBlur="if(value==''){this.style.color='#999';value='12345678901'}" onFocus="if(value=='12345678901'){this.style.color='#333';value=''}"/></td>
+					</tr>
+					<tr>
+						<td class="name">生日：</td>
+						<td><input name="text" type="text" value="2000/01/01" onBlur="if(value==''){this.style.color='#999';value='2000/01/01'}" onFocus="if(value=='2000/01/01'){this.style.color='#333';value=''}"/></td>
+						<td class="name">邮箱：</td>
+						<td><input name="text" type="text" value="123456@qq.com" onBlur="if(value==''){this.style.color='#999';value='123456@qq.com'}" onFocus="if(value=='123456@qq.com'){this.style.color='#333';value=''}"/></td>
+					</tr>
+					<tr>
+						<td class="name">邮编：</td>
+						<td><input name="text" type="text" value="123456" onBlur="if(value==''){this.style.color='#999';value='123456'}" onFocus="if(value=='123456'){this.style.color='#333';value=''}"/></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td class="name">地址：</td>
+						<td colspan="3"><input name="text" type="text" value="广东省深圳市南山区高新南七道" onBlur="if(value==''){this.style.color='#999';value='广东省深圳市南山区高新南七道'}" onFocus="if(value=='广东省深圳市南山区高新南七道'){this.style.color='#333';value=''}" style="width:300px;"/></td>
+					</tr>
+				</table>
+			</div>
+			<div class="vip_btn center">
+				<div class="btn fabu_btn"><a href="">确定</a></div>
+				<div class="btn gray_btn"><a href="">返回</a></div>
+			</div>
+        </article>
+    </section>
+</section>
+<!-- main end -->
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>Simple QR Code Generator</title>
+<style type='text/css'>
+#qrcode {
+    display: block;
+    width:160px;
+    height:160px;
+    margin-top:15px;
+}
+#qrcode canvas{
+    width: 123px;
+    height: 123px;
+}
+#qrcode canvas img{
+    width: 123px;
+    height: 123px;
+}
+#text {
+    display: block;
+    width: 80%;
+}
+</style>
+</head>
+<body>
+  <input id="text" type="text" value="http://www.100sucai.com" style="width: 300px; margin: 30px auto" />
+<span id="qrcode"></span>
+
+<script src='../js/jquery-3.1.1.min.js'></script>
+<script src='../js/qrcode.min.js'></script>
+<script type='text/javascript'>
+var qrcode = new QRCode("qrcode");
+
+$("#text").on("keyup", function () {
+    qrcode.makeCode($(this).val());
+}).keyup().focus();
+</script>
+</body>
+</html>
